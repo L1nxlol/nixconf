@@ -1,0 +1,62 @@
+{ pkgs, config, ... }:
+{
+  imports = [
+    ./hyprland/hyprland.nix
+    ./zsh/zsh.nix
+    ./nvim/nvim.nix
+    ./kitty/kitty.nix
+  ];
+
+  home.username = "user";
+  home.homeDirectory = "/home/user";
+  home.stateVersion = "26.05";
+
+  home.packages = with pkgs; [
+    btop
+    fd
+    (pkgs.writeShellScriptBin "ksp-rp1" ''
+    export SDL_VIDEODRIVER=x11
+    exec /home/user/Games/rp1/KSP.x86_64 "$@"
+    '')
+  ];
+
+  gtk.enable = true;
+  qt.enable = true;
+  qt.platformTheme.name = "gtk";
+  qt.style.name = "adwaita-dark";
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+    };
+  };
+
+
+  home.file.".local/share/fonts" = {
+    source = ./resources/fonts;
+    recursive = true;
+  };
+
+home.file.".local/share/icons/AOSP Cursors" = {
+  source = ./resources/cursor/aosp-cursors;
+  recursive = true;
+};
+
+gtk.cursorTheme = {
+  name = "AOSP Cursors";
+  size = 14;
+};
+
+home.sessionVariables = {
+  XCURSOR_THEME = "AOSP Cursors";
+  XCURSOR_SIZE = "14";
+};
+
+
+  programs.git = {
+    enable = true;
+    userName = "user";
+    userEmail = "DJTrump@cumallover.me";
+  };
+}
