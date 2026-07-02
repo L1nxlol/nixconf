@@ -7,5 +7,6 @@
     ln -sfn /home/user/Nix/home/hyprland/hyprland.lua $HOME/.config/hypr/hyprland.lua
     ln -sfn /home/user/Nix/home/hyprland/style.lua $HOME/.config/hypr/style.lua
     ln -sfn /home/user/Nix/home/hyprland/binds.lua $HOME/.config/hypr/binds.lua
+    ln -sfn /home/user/Nix/home/hyprland/layout.lua $HOME/.config/hypr/layout.lua
   '';
 }

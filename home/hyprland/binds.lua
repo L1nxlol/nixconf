@@ -1,4 +1,4 @@
-mainMod = "SUPER" 
+mainMod = "SUPER"
 
 local dirKeys = {
   ["W"] = "up",
@@ -32,7 +32,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- main keybinds
 hl.bind("ALT + space", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("zen"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("~/Nix/scripts/power"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
