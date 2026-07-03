@@ -38,20 +38,20 @@
     recursive = true;
   };
 
-home.file.".local/share/icons/AOSP Cursors" = {
-  source = ./resources/cursor/aosp-cursors;
-  recursive = true;
-};
+  home.file.".local/share/icons/AOSP Cursors" = {
+    source = ./resources/cursor/aosp-cursors;
+    recursive = true;
+  };
 
-gtk.cursorTheme = {
-  name = "AOSP Cursors";
-  size = 14;
-};
+  gtk.cursorTheme = {
+    name = "AOSP Cursors";
+    size = 14;
+  };
 
-home.sessionVariables = {
-  XCURSOR_THEME = "AOSP Cursors";
-  XCURSOR_SIZE = "14";
-};
+  home.sessionVariables = {
+    XCURSOR_THEME = "AOSP Cursors";
+    XCURSOR_SIZE = "14";
+  };
 
 
   programs.git = {
