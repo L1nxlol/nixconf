@@ -12,15 +12,16 @@ local dirKeys = {
 }
 
 
-for i = 1, 10 do 
+for i = 1, 10 do
   if i == 10 then key = 0 else key = i end
   hl.bind("SUPER + ".. key, hl.dsp.focus({workspace = i}))
   hl.bind("SUPER + SHIFT + ".. key, hl.dsp.window.move({workspace = i}))
   hl.bind("SUPER + CTRL + ".. key, hl.dsp.window.move({workspace = i, follow = false}))
 end
 
-for key, dir in pairs(dirKeys) do 
+for key, dir in pairs(dirKeys) do
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({direction = dir}))
+  hl.bind(mainMod .. " + CTRL + " .. key, hl.dsp.window.swap({direction = dir}))
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({direction = dir}))
 end
 
