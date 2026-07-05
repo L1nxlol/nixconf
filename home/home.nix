@@ -14,10 +14,6 @@
   home.packages = with pkgs; [
     btop
     fd
-    (pkgs.writeShellScriptBin "ksp-rp1" ''
-    export SDL_VIDEODRIVER=x11
-    exec /home/user/Games/rp1/KSP.x86_64 "$@"
-    '')
   ];
 
   gtk.enable = true;
