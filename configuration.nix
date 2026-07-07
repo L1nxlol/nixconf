@@ -13,7 +13,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.useOSProber = true;
 
   programs.dconf.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -24,6 +24,8 @@
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  networking.firewall.allowedTCPPorts = [ 53317 ];
+  networking.firewall.allowedUDPPorts = [ 53317 ];
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";

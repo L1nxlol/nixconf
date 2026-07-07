@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     btop
     fd
+    qt6.qtdeclarative
   ];
 
   gtk.enable = true;

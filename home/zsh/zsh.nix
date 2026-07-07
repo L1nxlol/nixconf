@@ -27,6 +27,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       sreboot = "systemctl soft-reboot";
       off = "shutdown 0";
       fastfetch = "fastfetch";
+      update = "sudo nix flake update ~/Nix";
     };
   };
 }

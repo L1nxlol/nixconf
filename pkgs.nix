@@ -31,6 +31,9 @@
     kitty
     eog
     totem
+    localsend
+    krita
+    gimp
 
 
     # SYSTEM #
