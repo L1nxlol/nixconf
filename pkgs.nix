@@ -24,7 +24,8 @@
     gcc
     git
     wl-clipboard
-
+    libnotify
+    swaynotificationcenter
 
 
     # GUI BASIC TOOLS # 

@@ -73,3 +73,23 @@ hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
+
+
+
+hl.bind(" + code:66", function()
+  local activeWindow = hl.get_active_window()
+  local terminalClasses = { ["kitty"] = true }
+
+  if activeWindow ~= nil and terminalClasses[activeWindow.class] then
+    hl.dispatch(hl.dsp.send_shortcut({ mods = "", key = "Escape" }))
+  else
+    hl.dispatch(hl.dsp.send_shortcut({ mods = "", key = "Caps_Lock" }))
+  end
+end)
+
+
+hl.config({
+  input = {
+    kb_options = "caps:none",
+  },
+})

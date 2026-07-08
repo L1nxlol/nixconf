@@ -15,6 +15,12 @@
     btop
     fd
     qt6.qtdeclarative
+    timg
+    mpv
+    fzf
+    ytfzf
+    jq
+    curl
   ];
 
   gtk.enable = true;
@@ -56,4 +62,7 @@
     userName = "user";
     userEmail = "DJTrump@cumallover.me";
   };
+
+  
+  services.swaync.enable = true;
 }
