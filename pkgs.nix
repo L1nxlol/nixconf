@@ -41,8 +41,8 @@
     zsh
     dconf
     home-manager
-
-
+    
+      
   # LANGUAGES #
     lua
 
