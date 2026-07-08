@@ -23,10 +23,15 @@
     curl
   ];
 
+
   gtk.enable = true;
   qt.enable = true;
   qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
+  gtk.theme = {
+    name = "Adwaita-dark";
+    package = pkgs.gnome-themes-extra;
+  };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -59,8 +64,10 @@
 
   programs.git = {
     enable = true;
-    userName = "user";
-    userEmail = "DJTrump@cumallover.me";
+    settings = {
+      user.name = "user";
+      user.email = "DJTrump@cumallover.me";
+    };
   };
 
   
