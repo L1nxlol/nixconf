@@ -12,6 +12,8 @@ hl.monitor({
     scale    = "auto",
 })
 
+hl.workspace_rule({ workspace = "special:secondary", monitor = "HDMI-A-1" })
+
 env = {
   { "GTK_THEME", "Adwaita:dark" },
   { "GTK_APPLICATION_PREFER_DARK_THEME", "1" },
@@ -57,6 +59,9 @@ hl.config({
         touchpad = {
             natural_scroll = false,
         },
+    },
+    binds = {
+      -- window_direction_monitor_fallback = false,
     },
 })
 

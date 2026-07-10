@@ -26,6 +26,7 @@
     wl-clipboard
     libnotify
     swaynotificationcenter
+    caligula
 
 
     # GUI BASIC TOOLS # 
@@ -57,7 +58,9 @@
 
     # GAMES #
     prismlauncher
+    heroic
     ckan
+    lutris
   ];
 
   programs.nix-ld.enable = true;

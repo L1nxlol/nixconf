@@ -21,6 +21,7 @@
     ytfzf
     jq
     curl
+    mpg123
   ];
 
 

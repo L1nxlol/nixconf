@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
-  home.packages = [ pkgs.hyprland ];  # just install the package, no HM module management
-
+  home.packages = [ pkgs.hyprland ]; 
   home.activation.linkHyprland = config.lib.dag.entryAfter ["writeBoundary"] ''
     mkdir -p $HOME/.config/hypr
     ln -sfn /home/user/Nix/home/hyprland/hyprland.lua $HOME/.config/hypr/hyprland.lua
