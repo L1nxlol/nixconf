@@ -26,8 +26,8 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       vim = "nvim";
       sreboot = "systemctl soft-reboot";
       off = "shutdown 0";
-      fastfetch = "fastfetch";
       update = "sudo nix flake update --flake ~/Nix";
+      fastfetch = "fastfetch -c './fastfetch.png'";
     };
   };
 }

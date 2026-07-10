@@ -5,6 +5,7 @@
     ./zsh/zsh.nix
     ./nvim/nvim.nix
     ./kitty/kitty.nix
+    ./misc/misc.nix
   ];
 
   home.username = "user";

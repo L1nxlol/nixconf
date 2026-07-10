@@ -21,6 +21,7 @@
     # BASIC TOOLS #
     p7zip
     unzip
+    ffmpeg
     gcc
     git
     wl-clipboard
