@@ -1,0 +1,56 @@
+import QtQuick
+import "../../"
+import Quickshell.Hyprland
+
+
+
+Flickable {
+  
+  property var filteredWorkspaces: {
+  let result = []
+    for (let i = 0; i < Hyprland.workspaces.values.length; i++) {
+      let ws = Hyprland.workspaces.values[i]
+      if (ws.id <= 10) result.push(ws)
+    }
+  return result
+  }
+
+  id: flick
+  width: row.width
+  height: 17
+  contentWidth: row.width
+  interactive: false  
+  anchors.horizontalCenter: parent.horizontalCenter
+
+  Row {
+    id: row
+    spacing: 6
+
+    move: Transition {
+      NumberAnimation {
+        properties: "x,y"
+        duration: 1500
+        easing.type: Easing.OutCubic
+      }
+    }
+
+    add: Transition {
+      NumberAnimation {
+        property: "opacity"
+        from: 0
+        to: 1
+        duration: 1500
+      }
+    }   
+
+    Repeater {
+      model: filteredWorkspaces
+      delegate: Rectangle {
+        width: 16
+        height: 16
+        radius: 8
+        color: modelData.active ? Theme.accent : Theme.light
+      }
+    }
+  } 
+}
