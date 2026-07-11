@@ -59,6 +59,10 @@ PanelWindow {
       anchors.left: parent.left
       anchors.leftMargin: 10
     }
+
+    Workspaces {
+      anchors.centerIn: parent
+    }
   }
   
   
