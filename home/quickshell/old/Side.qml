@@ -3,7 +3,7 @@ import Quickshell
 import Quickshell.Wayland
 
 PanelWindow {
-  property string side: "left"
+  property string side: ""
   property int thickness: 10
 
   anchors {
@@ -18,5 +18,5 @@ PanelWindow {
   implicitHeight: thickness
   implicitWidth: thickness
 
-  color: Theme.dark
+  color: Theme.light
 }

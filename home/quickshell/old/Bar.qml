@@ -4,29 +4,30 @@ import Quickshell.Wayland
 import "Widgets/Static"
 
 PanelWindow {
+
+  implicitHeight: 32
+  color: "transparent"
   anchors {
     top: true
     left: true
     right:true
   }
-  property int thickness: 32
 
-  WlrLayershell.layer: WlrLayer.Bottom
-  exclusiveZone: thickness
-  implicitHeight: thickness
+Rectangle {
 
+  implicitHeight: 32
   color: Theme.dark
-  
+  anchors.fill: parent
 
-  Workspaces {
-    anchors.horizontalCenter: parent.horizontalCenter
-    anchors.verticalCenter: parent.verticalCenter
-    // anchors.topMargin: 100
-  }
+  // Workspaces {
+  //   anchors.horizontalCenter: parent.horizontalCenter
+  //   anchors.verticalCenter: parent.verticalCenter
+  // }
 
   Clock {
     anchors.left: parent.left
     anchors.leftMargin: 10
     anchors.verticalCenter: parent.verticalCenter
   }
+}
 }
