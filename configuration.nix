@@ -24,8 +24,6 @@
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  networking.firewall.allowedTCPPorts = [ 53317 ];
-  networking.firewall.allowedUDPPorts = [ 53317 ];
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -52,6 +50,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
@@ -65,27 +64,17 @@
     ];
   };
 
-
   programs.nix-ld.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    53317 # Local Send
+    2137
+  ];
+  networking.firewall.allowedUDPPorts = [ 
+    53317 # Local Send
+    2137
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
