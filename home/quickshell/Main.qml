@@ -6,8 +6,6 @@ import "Widgets/Static"
 PanelWindow {
   property int sides: 10
   id: root
-  // required property var modelData
-  // screen: modelData
   
   color: "transparent"
   exclusionMode: ExclusionMode.Ignore
