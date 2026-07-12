@@ -24,6 +24,9 @@
     curl
     mpg123
     musikcube
+    peaclock
+    cava
+    lavat
   ];
 
 
