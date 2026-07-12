@@ -3,7 +3,7 @@ import Quickshell
 import Quickshell.Wayland
 
 PanelWindow {
-  property string side: "left"
+  property string side: ""
   property int thickness: 7
 
   anchors {

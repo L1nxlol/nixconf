@@ -5,10 +5,13 @@ import "Widgets/Static"
 
 PanelWindow {
   property int sides: 10
+  id: root
+  // required property var modelData
+  // screen: modelData
   
   color: "transparent"
   exclusionMode: ExclusionMode.Ignore
-  WlrLayershell.layer: WlrLayer.Bottom
+  WlrLayershell.layer: WlrLayer.Top
 
   anchors {
     top: true
@@ -60,12 +63,16 @@ PanelWindow {
       anchors.leftMargin: 10
     }
 
-    Workspaces {
+    Pill {
       anchors.centerIn: parent
+      screen: root.screen
+      id: pill
     }
   }
   
   
   
-  mask: Region {}
+  mask: Region {
+    item: pill
+  }
 }
