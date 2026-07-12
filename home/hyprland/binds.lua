@@ -35,6 +35,10 @@ for key, dir in pairs(dirKeys) do
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({direction = dir}))
 end
 
+hl.bind("SUPER + E", hl.dsp.focus({workspace = "e+1"}))
+hl.bind("SUPER + Q", hl.dsp.focus({workspace = "e-1"}))
+
+
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
