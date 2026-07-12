@@ -47,6 +47,7 @@
       
   # LANGUAGES #
     lua
+    adoptopenjdk-icedtea-web
 
 
     # DE #
@@ -82,6 +83,8 @@
     zsh.enable = true;
     hyprlock.enable = true;
     steam.enable = true;
+    java.enable = true;
+    java.package = pkgs.jdk25;
   };
   
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
