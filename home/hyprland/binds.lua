@@ -3,7 +3,7 @@ hl = hl
 
 local dirKeys = {
   ["W"] = "up",
-  ["up"] = "right",
+  ["up"] = "up",
   ["S"] = "down",
   ["down"] = "down",
   ["A"] = "left",
@@ -84,9 +84,9 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 -- CAPSLOCK
 hl.bind(" + code:66", function()
   local activeWindow = hl.get_active_window()
-  local terminalClasses = { ["kitty"] = true }
+  local terminals = { ["kitty"] = true }
 
-  if activeWindow ~= nil and terminalClasses[activeWindow.class] then
+  if activeWindow ~= nil and terminals[activeWindow.class] then
     hl.dispatch(hl.dsp.send_shortcut({ mods = "", key = "Escape" }))
   else
     hl.dispatch(hl.dsp.send_shortcut({ mods = "", key = "code:66" }))
