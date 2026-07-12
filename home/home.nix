@@ -23,6 +23,7 @@
     jq
     curl
     mpg123
+    musikcube
   ];
 
 
