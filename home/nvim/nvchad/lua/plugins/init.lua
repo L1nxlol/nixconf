@@ -25,4 +25,13 @@ return {
   -- 		},
   -- 	},
   -- },
+{
+  "shortcuts/no-neck-pain.nvim",
+  cmd = "NoNeckPain",
+  config = function()
+    require("no-neck-pain").setup({
+      width = 100,
+    })
+  end,
+}
 }
