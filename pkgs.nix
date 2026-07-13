@@ -32,7 +32,6 @@
 
     # GUI BASIC TOOLS # 
     kitty
-    wezterm
     eog
     totem
     localsend
