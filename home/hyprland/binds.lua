@@ -84,7 +84,10 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 -- CAPSLOCK
 hl.bind(" + code:66", function()
   local activeWindow = hl.get_active_window()
-  local terminals = { ["kitty"] = true }
+  local terminals = { 
+    ["kitty"] = true,
+    ["ghostty"] = true
+  }
 
   if activeWindow ~= nil and terminals[activeWindow.class] then
     hl.dispatch(hl.dsp.send_shortcut({ mods = "", key = "Escape" }))

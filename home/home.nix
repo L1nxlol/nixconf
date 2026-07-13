@@ -6,6 +6,7 @@
     ./nvim/nvim.nix
     ./kitty/kitty.nix
     ./misc/misc.nix
+    ./ghostty/ghostty.nix
   ];
 
   home.username = "user";

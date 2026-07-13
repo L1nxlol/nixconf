@@ -32,6 +32,7 @@
 
     # GUI BASIC TOOLS # 
     kitty
+    ghostty
     eog
     totem
     localsend
