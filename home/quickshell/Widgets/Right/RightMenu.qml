@@ -3,7 +3,7 @@ import Quickshell
 import Quickshell.Wayland
 import Quickshell.Hyprland
 import "../.."
-import "../../Services"
+import "../../Bar"
 
 Loader {
   active: States.rightMenu

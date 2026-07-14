@@ -1,13 +1,13 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
-import "Widgets/Static"
+import "Widgets/Bar"
 import "Services"
 
 PanelWindow {
   property int topSide: 32
   property int sides: 7
-  property int leftSide: 7
+  property int leftSide: States.leftMenu ? 300 : 7
   property int rightSide: States.rightMenu ? 300 : 7
   id: root
   
@@ -75,9 +75,17 @@ PanelWindow {
       right: parent.right 
     }
     
-    Clock {
+    Row {
       anchors.left: parent.left
-      anchors.leftMargin: 10
+      anchors.leftMargin: 5
+      anchors.verticalCenter: parent.verticalCenter
+      spacing: 10
+
+      Clock {
+        anchors.leftMargin: 30
+      }
+
+      Logo {}
     }
 
     Pill {
@@ -96,6 +104,13 @@ PanelWindow {
     SpringAnimation { 
       spring: States.rightMenu ? 10 : 3.5
       damping: States.rightMenu ? 1 : 0.25 
+    }
+  }
+
+  Behavior on leftSide {
+    SpringAnimation { 
+      spring: States.leftMenu ? 10 : 3.5
+      damping: States.leftMenu ? 1 : 0.25 
     }
   }
   
