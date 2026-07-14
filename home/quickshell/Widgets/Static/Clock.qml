@@ -13,7 +13,6 @@ Rectangle {
     interval: 1000 
 	  onTriggered: {
 	    timeHM.text = Qt.formatDateTime(new Date(), "hh:mm")
-	    timeS.text = Qt.formatDateTime(new Date(), "ss")
 	  }
 	  running: true
 	  repeat: true 

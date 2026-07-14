@@ -2,9 +2,13 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 import "Widgets/Static"
+import "Services"
 
 PanelWindow {
-  property int sides: 10
+  property int topSide: 32
+  property int sides: 7
+  property int leftSide: 7
+  property int rightSide: States.rightMenu ? 300 : 7
   id: root
   
   color: "transparent"
@@ -19,10 +23,10 @@ PanelWindow {
   }
   
   Rectangle { // Outer border
-    anchors.topMargin: -10  
+    anchors.topMargin: topSide - 40  
     anchors.bottomMargin: sides - 40
-    anchors.leftMargin: sides - 40
-    anchors.rightMargin: sides - 40
+    anchors.leftMargin: leftSide - 40
+    anchors.rightMargin: rightSide - 40
 
     anchors.fill: parent
     color: "transparent"
@@ -31,12 +35,26 @@ PanelWindow {
     
     radius: 63
   }
+
+  Rectangle { // Fill
+    anchors.topMargin: topSide - 500
+    anchors.bottomMargin: sides - 500
+    anchors.leftMargin: leftSide - 500
+    anchors.rightMargin: rightSide - 500
+
+    anchors.fill: parent
+    color: "transparent"
+    border.color: Theme.dark
+    border.width: 500
+    
+    radius: 63
+  }
   
   Rectangle { // Inner border
-    anchors.topMargin: 30 
+    anchors.topMargin: topSide 
     anchors.bottomMargin: sides
-    anchors.leftMargin: sides
-    anchors.rightMargin: sides
+    anchors.leftMargin: leftSide
+    anchors.rightMargin: rightSide
 
     anchors.fill: parent
     color: "transparent"
@@ -46,9 +64,10 @@ PanelWindow {
     radius: 20
   }  
   
-  Rectangle{ // Accual bar
+  Rectangle{ // Actual bar
     implicitHeight: 32
     color: "transparent"
+    id: bar
 
     anchors { 
       top: parent.top
@@ -66,11 +85,21 @@ PanelWindow {
       screen: root.screen
       id: pill
     }
+
+    RightContainer {
+      id: rightContainerce7050
+      anchors.rightMargin: 10
+    }
   }
   
-  
+  Behavior on rightSide {
+    SpringAnimation { 
+      spring: States.rightMenu ? 10 : 3.5
+      damping: States.rightMenu ? 1 : 0.25 
+    }
+  }
   
   mask: Region {
-    item: pill
+    item: bar
   }
 }

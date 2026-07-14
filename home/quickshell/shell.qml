@@ -9,8 +9,8 @@ ShellRoot {
       required property var modelData
       property var screen
 
-      Main { screen: modelData; sides: 7 }
-      Exclusion { screen: modelData; side: "top"; thickness: 30 }
+      Main { screen: modelData }
+      Exclusion { screen: modelData; side: "top"; thickness: 32 }
       Exclusion { screen: modelData; side: "bottom" }
       Exclusion { screen: modelData; side: "left" }
       Exclusion { screen: modelData; side: "right" }
