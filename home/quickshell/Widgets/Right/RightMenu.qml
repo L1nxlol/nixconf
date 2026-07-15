@@ -117,10 +117,7 @@ Loader {
         Loader{
           active: States.rightMenuState === 3
           anchors.fill: parent
-          sourceComponent: Rectangle {
-            anchors.fill: parent
-            color: Theme.dark
-          }
+          sourceComponent: BluetoothMenu {anchors.fill: parent}
         }
       }
     }

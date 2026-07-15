@@ -1,65 +1,33 @@
 import QtQuick
 import Quickshell
-import Quickshell.Io
+import Quickshell.Bluetooth
 import "../.."
-import "../../Services"
 
 Item {
-  width: 20 
-  height: 20
+    id: root
+    width: 20
+    height: 20
 
-  property bool powered: false
-  property bool connected: false
-  property string deviceName: ""
+    readonly property var adapter: Bluetooth.defaultAdapter
+    readonly property bool powered: adapter?.enabled ?? false
+    readonly property var connectedDevice: Bluetooth.devices.values.find(d => d.connected)
+    readonly property bool connected: connectedDevice !== undefined
+    readonly property string deviceName: connectedDevice?.name ?? ""
 
-  Process {
-    id: btStatus
-    command: ["bluetoothctl", "show"]
-    running: true
-    stdout: StdioCollector {
-      onStreamFinished: {
-        powered = this.text.includes("Powered: yes")
+
+    Text {
+        anchors.fill: parent
+        anchors.topMargin: 4
+        anchors.leftMargin: 10
+        font.family: Theme.font
+        font.pixelSize: 18
+        color: Theme.text
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        text: {
+          if (!root.powered) return "󰂲"
+          else if (!root.connected) return "󰂰"
+          else return ""
+        }
       }
-    }
-  }
-
-  Process {
-    id: btDevices
-    command: ["bluetoothctl", "devices", "Connected"]
-    running: true
-    stdout: StdioCollector {
-      onStreamFinished: {
-        const lines = this.text.split("\n").filter(l => l.length > 0)
-        connected = lines.length > 0
-        deviceName = lines.length > 0 ? lines[0].split(" ").slice(2).join(" ") : ""
-      }
-    }
-  }
-
-  Timer {
-    interval: 2000
-    running: true
-    repeat: true
-    onTriggered: {
-      btStatus.running = true
-      btDevices.running = true
-    }
-  }
-
-  Text {
-    font.family: Theme.font
-    font.pixelSize: 18
-    color: Theme.text
-    anchors.fill: parent 
-    horizontalAlignment: Text.AlignHCenter
-    verticalAlignment: Text.AlignVCenter
-    anchors.topMargin: 4
-    anchors.leftMargin: 10
-
-    text: {
-      if (!powered) return "󰂲"
-      else if (!connected) return "󰂰" 
-      else return ""
-    }
-  }
 }

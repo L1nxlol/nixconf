@@ -58,25 +58,6 @@ Process {
     onTriggered: nmStatus.running = true
   }
 
-  // property var wifiDevice: {
-  //   for (const dev of Networking.devices.values) {
-  //     if (dev.type === DeviceType.Wifi) return dev
-  //   }
-  //   return null
-  // }
-  //
-  // property var activeNetwork: {
-  //   if (!wifiDevice) return null
-  //   for (const net of wifiDevice.networks.values) {
-  //     if (net.connected) return net
-  //   }
-  //   return null
-  // }
-  //
-  // property bool connected: activeNetwork !== null
-  // property real signal: activeNetwork ? activeNetwork.signalStrength : 0
-
-
   Text {
     font.family: Theme.font
     font.pixelSize: 30
