@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Wayland
 import "Widgets/Bar"
+import "Widgets/Right"
 import "Services"
 
 PanelWindow {
@@ -62,6 +63,13 @@ PanelWindow {
     border.width: 4
 
     radius: 20
+
+    RightMenu {
+      id: rightMenu
+      anchors.top: parent.top
+      anchors.left: parent.right
+      anchors.leftMargin: 15
+    }
   }  
   
   Rectangle{ // Actual bar
@@ -116,5 +124,6 @@ PanelWindow {
   
   mask: Region {
     item: bar
+    Region { item: rightMenu }  
   }
 }

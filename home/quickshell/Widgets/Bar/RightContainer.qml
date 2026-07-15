@@ -23,6 +23,6 @@ Rectangle {
     spacing: 3
 
     Wifi {}
-    Bluetooth {}
+    BluetoothIcon {}
   } 
 }
