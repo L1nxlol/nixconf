@@ -24,9 +24,11 @@
     curl
     mpg123
     musikcube
+
+    # TERMINAL ANIMATIONS #
     peaclock
-    cava
-    lavat
+    cava 
+    lavat 
   ];
 
 

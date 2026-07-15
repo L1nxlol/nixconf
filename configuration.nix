@@ -22,6 +22,7 @@
   networking.hostName = "desktop"; 
   networking.wireless.enable = true;  
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "9.9.9.9"];
   programs.nm-applet.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
