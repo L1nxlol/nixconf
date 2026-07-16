@@ -108,10 +108,7 @@ Loader {
         Loader{
           active: States.rightMenuState === 2
           anchors.fill: parent
-          sourceComponent: Rectangle {
-            anchors.fill: parent
-            color: Theme.accent
-          }
+          sourceComponent: WifiMenu {anchors.fill: parent}
         }
 
         Loader{
