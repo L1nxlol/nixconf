@@ -25,4 +25,10 @@ Rectangle {
     Wifi {}
     BluetoothIcon {}
   } 
+
+  Mic {
+    anchors.right: parent.left
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.rightMargin: 4
+  }
 }
