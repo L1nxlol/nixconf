@@ -19,8 +19,6 @@ Item {
     return known.concat(sep, other)
   }
 
-  onCombinedModelChanged: console.log("combinedModel:", combinedModel.length)
-
   anchors.fill: parent
 
   Rectangle {
@@ -45,7 +43,7 @@ Item {
 
   ListView {
     width: parent.width
-    height: parent.height - 48
+    height: parent.height - 40
     anchors.bottom: parent.bottom
     clip: true 
 
