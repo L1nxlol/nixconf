@@ -1,1 +1,3 @@
 singleton States 1.0 States.qml
+singleton NotifServer 1.0 NotifServer.qml
+NotifPopup 1.0 NotifPopup.qml

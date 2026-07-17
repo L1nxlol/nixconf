@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import "Services"
 
 ShellRoot {
   Variants {
@@ -16,4 +17,6 @@ ShellRoot {
       Exclusion { screen: modelData; side: "right" }
     }
   }
+
+  NotifPopup {}
 }
