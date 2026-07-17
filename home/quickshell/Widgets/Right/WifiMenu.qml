@@ -57,6 +57,7 @@ readonly property var combinedModel: {
     }
 
     Text {
+      font.family: Theme.font
       anchors.fill: parent
       color: powered ? Theme.border : Theme.text
       horizontalAlignment: Text.AlignHCenter
@@ -81,6 +82,7 @@ readonly property var combinedModel: {
     }
 
     Text {
+      font.family: Theme.font
       anchors.fill: parent
       color: wifiDevice?.scannerEnabled ? Theme.border : Theme.text
       horizontalAlignment: Text.AlignHCenter

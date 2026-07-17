@@ -6,13 +6,14 @@ Item {
   required property var modelData
   readonly property var network: modelData.network
 
-  height: 71
+  height: network.known ? 71 : 40
   width: 255
 
-  anchors.bottomMargin: 4
+  anchors.bottomMargin: network.known ? 4 : 0
 
   Rectangle {
     id: rightButton
+    visible: network.known
     width: 30
     height: 42
     anchors.right: parent.right
@@ -66,8 +67,8 @@ Item {
     id: mainButton
     anchors.fill: parent
     anchors.rightMargin: network.known ? rightHover.containsMouse ? 30 : 0 : 0
-    anchors.topMargin: 8
-    anchors.bottomMargin: 8
+    anchors.topMargin: network.known ? 8 : 3
+    anchors.bottomMargin: network.known ? 8 : 3 
     radius: 5
     color: network.connected ? Theme.accent : Theme.gray
     clip: true

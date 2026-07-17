@@ -3,6 +3,7 @@ import Quickshell
 import "../.."
 import "../../Bar"
 import "../../Services"
+import "Settings"
 
 Loader {
   active: States.rightMenu || closeTimer.running
@@ -42,14 +43,21 @@ Loader {
         anchors.horizontalCenter: parent.horizontalCenter
         topLeftRadius: 20
         topRightRadius: 20
-        color: {
-          if (States.rightMenuState === 2) return Theme.accent 
-          else return Theme.border
-        }
+        color: Theme.border
 
         MouseArea {
           anchors.fill: parent
           onClicked: States.rightMenuState = 2
+        }
+
+        Text {
+          font.family: Theme.font
+          font.pixelSize: 15
+          color: Theme.accent
+          anchors.fill: parent 
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+          text: "Wifi"
         }
       }
 
@@ -60,14 +68,21 @@ Loader {
         anchors.left: parent.left
         topLeftRadius: 20
         topRightRadius: 20
-        color: {
-          if (States.rightMenuState === 1) return Theme.accent 
-          else return Theme.border
-        }
+        color: Theme.border
 
         MouseArea {
           anchors.fill: parent
           onClicked: States.rightMenuState = 1
+        }
+
+        Text {
+          font.family: Theme.font
+          font.pixelSize: 15
+          color: Theme.accent
+          anchors.fill: parent 
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+          text: "Settings"
         }
       }
 
@@ -78,16 +93,59 @@ Loader {
         anchors.right: parent.right
         topLeftRadius: 20
         topRightRadius: 20
-        color: {
-          if (States.rightMenuState === 3) return Theme.accent 
-          else return Theme.border
-        }
+        color: Theme.border
 
         MouseArea {
           anchors.fill: parent
           onClicked: States.rightMenuState = 3
         }
+
+        Text {
+          font.family: Theme.font
+          font.pixelSize: 15
+          color: Theme.accent
+          anchors.fill: parent 
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+          text: "Bluetooth"
+        }
       }
+
+      Rectangle {
+        height: 30
+        width: 90
+        anchors.top: parent.top
+        anchors.left: parent.left
+        topLeftRadius: 20
+        topRightRadius: 20
+        color: Theme.accent
+
+        anchors.leftMargin: {
+          if (States.rightMenuState === 1) return 0
+          else if (States.rightMenuState === 2) return 90
+          else return 180
+        }
+
+        Text{
+          font.family: Theme.font
+          font.pixelSize: 15
+          color: Theme.border
+          anchors.fill: parent 
+          horizontalAlignment: Text.AlignHCenter
+          verticalAlignment: Text.AlignVCenter
+
+          text: {
+            if (States.rightMenuState === 1) return "Settings"
+            else if (States.rightMenuState === 2) return "Wifi"
+            else return "Bluetooth"
+          }
+        }
+
+        Behavior on anchors.leftMargin {
+          SpringAnimation { spring: 20; damping: 1}
+        }
+      }
+
 
       Item {
         anchors.fill: parent
@@ -99,10 +157,7 @@ Loader {
         Loader{
           active: States.rightMenuState === 1
           anchors.fill: parent
-          sourceComponent: Rectangle {
-            anchors.fill: parent
-            color: Theme.light
-          }
+          sourceComponent: Settings {}
         }
 
         Loader{
