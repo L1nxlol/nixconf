@@ -3,6 +3,7 @@ import Quickshell
 import Quickshell.Wayland
 import "Widgets/Bar"
 import "Widgets/Right"
+import "Widgets/Left"
 import "Services"
 
 PanelWindow {
@@ -70,6 +71,24 @@ PanelWindow {
       anchors.left: parent.right
       anchors.leftMargin: 15
     }
+
+    LeftMenu {
+      id: leftMenu
+      anchors.top: parent.top
+      anchors.right: parent.left
+      anchors.rightMargin: -15
+    }
+
+    MouseArea {
+      id: autoHideArea
+      anchors.fill: parent
+      hoverEnabled: true 
+      acceptedButtons: Qt.NoButton
+      onEntered: {
+        States.leftMenu = false
+        States.rightMenu = false
+      }
+    }
   }  
   
   Rectangle{ // Actual bar
@@ -125,5 +144,13 @@ PanelWindow {
   mask: Region {
     item: bar
     Region { item: rightMenu }  
+    Region { item: leftMenu }
+  }
+
+  Loader {
+    active: States.leftMenu || States.rightMenu
+    sourceComponent: Item { 
+      mask: Region { item: autoHideArea }
+    }
   }
 }
