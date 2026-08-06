@@ -141,16 +141,18 @@ PanelWindow {
     }
   }
   
-  mask: Region {
+  property Region sidesClosed: Region {
     item: bar
-    Region { item: rightMenu }  
+    Region { item: rightMenu }
     Region { item: leftMenu }
   }
-
-  Loader {
-    active: States.leftMenu || States.rightMenu
-    sourceComponent: Item { 
-      mask: Region { item: autoHideArea }
-    }
+  
+  property Region sidesOpen: Region {
+    item: bar
+    Region { item: rightMenu }
+    Region { item: leftMenu }
+    Region { item: autoHideArea }
   }
+
+  mask: (States.leftMenu || States.rightMenu) ? sidesOpen : sidesClosed
 }

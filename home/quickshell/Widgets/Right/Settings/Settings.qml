@@ -4,7 +4,6 @@ import "../../.."
 import "../../../Services"
 
 Rectangle{
-    property bool test: false
   anchors.fill: parent
   anchors.leftMargin: 4
   anchors.rightMargin: 4
@@ -14,12 +13,14 @@ Rectangle{
   color: Theme.dark
   
   Column {
-    spacing: 10
+    anchors.topMargin: 10
+    spacing: 5
     anchors.fill: parent
-    Switch {toggled: test}
-    MouseArea {
-      anchors.fill: parent
-      onClicked: test = !test
-    }
+    Example {}
+    Example {}
+    Example {}
+    // hot corners
+    // dnd
+    //
   }
 }

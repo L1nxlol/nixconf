@@ -28,6 +28,7 @@
     libnotify
     swaynotificationcenter
     caligula
+    helvum
 
 
     # GUI BASIC TOOLS # 
@@ -38,6 +39,11 @@
     krita
     gimp
     obs-studio
+    thunar
+
+
+    # ADVANCED GUIS #
+    blender
 
 
     # SYSTEM #

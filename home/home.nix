@@ -24,6 +24,7 @@
     curl
     mpg123
     musikcube
+    gnome-boxes
 
     # TERMINAL ANIMATIONS #
     peaclock
