@@ -21,7 +21,7 @@ Rectangle {
 	Text {
 	  id: timeHM 
 	  text: Qt.formatDateTime(new Date(), "hh:mm")
-	  color: Theme.text 
+	  color: Theme.highlight
 	  font.family: Theme.font
 	  font.pixelSize: 14
 	  anchors.centerIn: parent

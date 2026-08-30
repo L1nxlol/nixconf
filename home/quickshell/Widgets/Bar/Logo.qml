@@ -23,7 +23,7 @@ Rectangle {
     font.pixelSize: 30
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
-    color: Theme.text
+    color: Theme.highlight
     anchors.fill: parent 
     text: "󱄅"
   }

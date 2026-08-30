@@ -21,7 +21,7 @@ Item {
         anchors.leftMargin: 10
         font.family: Theme.font
         font.pixelSize: 18
-        color: Theme.text
+        color: Theme.highlight
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         text: {

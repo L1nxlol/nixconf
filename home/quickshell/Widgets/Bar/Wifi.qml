@@ -61,7 +61,7 @@ Process {
   Text {
     font.family: Theme.font
     font.pixelSize: 30
-    color: Theme.text
+    color: Theme.highlight
     anchors.fill: parent 
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
