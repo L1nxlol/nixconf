@@ -70,6 +70,7 @@ Process {
 
     text: {
       if (!connected) return "󰤮"
+      else if (States.wifiThingyState) return "󰤮"
       else if (ethernet) return "󱎔"
       else if (signal > 80) return "󰤨" 
       else if (signal > 60) return "󰤥"

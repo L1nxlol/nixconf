@@ -19,6 +19,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;  
+  
   networking.hostName = "desktop"; 
   networking.wireless.enable = true;  
   networking.networkmanager.enable = true;
@@ -59,7 +62,7 @@
   users.users."user" = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm"];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];

@@ -84,7 +84,7 @@ hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-")
 -- CAPSLOCK
 hl.bind(" + code:66", function()
   local activeWindow = hl.get_active_window()
-  local terminals = { 
+  local terminals = {
     ["kitty"] = true,
     ["com.mitchellh.ghostty"] = true,
     ["org.wezfurlong.wezterm"] = true

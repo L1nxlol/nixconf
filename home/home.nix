@@ -25,6 +25,7 @@
     mpg123
     musikcube
     gnome-boxes
+    onlyoffice-desktopeditors
 
     # TERMINAL ANIMATIONS #
     peaclock

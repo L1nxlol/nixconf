@@ -22,9 +22,11 @@ Item {
   anchors.fill: parent
 
   Rectangle {
-    width: 255
+    width: 125
     height: 40
     radius: 10
+    anchors.left: parent.left
+    anchors.top: parent.top
     color: powered ? Theme.light : Theme.dark
 
     MouseArea {
@@ -33,11 +35,37 @@ Item {
     }
 
     Text {
+      font.family: Theme.font
       anchors.fill: parent
       color: powered ? Theme.border : Theme.text
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
-      text: connected ? ("Connected: " + deviceName) : powered ? "Not connected" : "Bluetooth off"
+      text: connected ? "Connected" : powered ? "Not connected" : "Bluetooth off"
+    }
+  }  
+
+  Rectangle {
+    width: 125
+    height: 40
+    radius: 10
+    anchors.top: parent.top
+    anchors.right: parent.right
+    color: Bluetooth.defaultAdapter?.discovering ? Theme.light : Theme.dark
+    
+    MouseArea {
+      anchors.fill: parent
+      onClicked: {
+        if (Bluetooth.defaultAdapter) Bluetooth.defaultAdapter.discovering = !Bluetooth.defaultAdapter.discovering
+      }
+    }
+
+    Text {
+      font.family: Theme.font
+      anchors.fill: parent
+      color: Bluetooth.defaultAdapter?.discovering ? Theme.border : Theme.text
+      horizontalAlignment: Text.AlignHCenter
+      verticalAlignment: Text.AlignVCenter
+      text: Bluetooth.defaultAdapter?.discovering ? "Scanning" : "Stopped"
     }
   }
 

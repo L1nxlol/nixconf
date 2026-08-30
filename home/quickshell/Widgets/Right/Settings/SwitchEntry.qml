@@ -4,11 +4,16 @@ import "../../.."
 import "../../../Services"
 
 Item {
+  property string eName: "name this"
   property bool isToggled: false
+
+  signal toggleRequest()
+
   anchors {
     left: parent.left
     right: parent.right
   }
+
   height: 25
   anchors.leftMargin: 8
   anchors.rightMargin: 50
@@ -20,15 +25,14 @@ Item {
     anchors.fill: parent 
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
-    text: "Test"
+    text: eName
   }
 
   Switch {toggled: isToggled; anchors.rightMargin: -45}
+
   MouseArea {
     anchors.fill: parent
-    onClicked: {
-      isToggled = !isToggled
-    }
     anchors.rightMargin: -45
+    onClicked: toggleRequest()
   }
 }

@@ -8,6 +8,7 @@ Singleton {
     Component.onCompleted: console.log("NotifServer: singleton loaded")
 
     property var history: []
+    property bool dndStatus: false  
     property var latest: null
 
     ListModel {
@@ -23,16 +24,19 @@ Singleton {
             console.log("NotifServer: received notification from", notif.appName, "-", notif.summary)
 
             const entry = {
-    notifId: notif.id,
-    appName: notif.appName,
-    summary: notif.summary,
-    body: notif.body,
-    appIcon: notif.appIcon,
-    urgency: notif.urgency,
-    timestamp: Date.now()
-}
+              notifId: notif.id,
+              appName: notif.appName,
+              summary: notif.summary, 
+              body: notif.body,
+              appIcon: notif.appIcon,
+              urgency: notif.urgency,
+              timestamp: Date.now()
+            }
+
             root.history = [entry, ...root.history]
-            activePopupsModel.insert(0, entry)
+            if (!root.dndStatus) {
+              activePopupsModel.insert(0, entry)
+            }
             root.latest = entry
             root.newNotification(entry)
             console.log("NotifServer: history now has", root.history.length, "entries")

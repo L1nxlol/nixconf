@@ -135,3 +135,16 @@ hl.window_rule({
 require("style")
 require("binds")
 require("layout")
+
+
+hl.layer_rule({
+    match = { namespace = "^(selection)$" },  -- slurp's layer namespace
+    no_anim = true,
+})
+
+hl.window_rule({
+    match = { class = "^(kitty-float)$" },
+    float = true,
+    size = { 700, 450 },
+    center = true,
+})
