@@ -15,7 +15,7 @@ PanelWindow {
   
   color: "transparent"
   exclusionMode: ExclusionMode.Ignore
-  WlrLayershell.layer: WlrLayer.Top
+  WlrLayershell.layer: States.locked ? WlrLayer.Overlay : WlrLayer.Top
 
   anchors {
     top: true

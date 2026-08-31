@@ -11,6 +11,7 @@ ShellRoot {
       property var screen
 
       Main { screen: modelData }
+      Lock { screen: modelData}
       Exclusion { screen: modelData; side: "top"; thickness: 32 }
       Exclusion { screen: modelData; side: "bottom" }
       Exclusion { screen: modelData; side: "left" }

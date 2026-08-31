@@ -8,4 +8,5 @@ QtObject {
   property int leftMenuState: 1
 
   property bool wifiThingyState: false
+  property bool locked: false
 }
