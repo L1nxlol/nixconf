@@ -1,12 +1,17 @@
 { config, pkgs, ... }:
+
+let
+  hyprglass = pkgs.callPackage ../../cPkgs/hyprglass.nix {
+    mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
+  };
+in
 {
-  home.packages = [ pkgs.hyprland ]; 
-  home.activation.linkHyprland = config.lib.dag.entryAfter ["writeBoundary"] ''
-    mkdir -p $HOME/.config/hypr
-    ln -sfn /home/user/Nix/home/hyprland/hyprland.lua $HOME/.config/hypr/hyprland.lua
-    ln -sfn /home/user/Nix/home/hyprland/style.lua $HOME/.config/hypr/style.lua
-    ln -sfn /home/user/Nix/home/hyprland/binds.lua $HOME/.config/hypr/binds.lua
-    ln -sfn /home/user/Nix/home/hyprland/layout.lua $HOME/.config/hypr/layout.lua
-    ln -sfn /home/user/Nix/home/hyprland/hyprlock.conf $HOME/.config/hypr/hyprlock.conf
-  '';
+  home.activation.linkHyprland =
+    config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      ln -sfn $HOME/Nix/home/hyprland $HOME/.config/hypr
+
+      mkdir -p /home/user/Nix/home/hyprland/plugins
+      ln -sfn ${hyprglass}/lib/libhyprglass.so \
+        /home/user/Nix/home/hyprland/plugins/hyprglass.so
+    '';
 }

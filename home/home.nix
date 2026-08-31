@@ -31,6 +31,11 @@
     peaclock
     cava 
     lavat 
+
+    # CUSTOM PKGS #
+    (pkgs.callPackage ../cPkgs/hyprglass.nix {
+      mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
+    })
   ];
 
 
