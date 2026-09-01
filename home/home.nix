@@ -6,6 +6,7 @@
     ./zsh/zsh.nix
     ./nvim/nvim.nix
     ./kitty/kitty.nix
+    ./rofi/rofi.nix
     ./misc/misc.nix
     ./obsidian/obsidian.nix
   ];
