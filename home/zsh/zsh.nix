@@ -8,6 +8,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       enable = true;
       plugins = [ "git" "sudo" ];
     };
+
     plugins = [
       {
         name = "powerlevel10k";
@@ -15,8 +16,16 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
+
     initContent = ''
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+    clear-scrollback() {
+      clear
+      printf '\e[3J'
+    }
+    zle -N clear-scrollback
+    bindkey '^L' clear-scrollback
     '';
 
     shellAliases = {
@@ -28,6 +37,8 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       off = "shutdown 0";
       update = "sudo nix flake update --flake ~/Nix";
       fastfetch = "fastfetch -c '/home/user/Nix/home/misc/fastfetch.jsonc'";
+
+      clear = "clear && printf '\\e[3J'";
     };
   };
 }
