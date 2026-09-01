@@ -88,7 +88,8 @@ hl.bind(" + code:66", function()
   local terminals = {
     ["kitty"] = true,
     ["com.mitchellh.ghostty"] = true,
-    ["org.wezfurlong.wezterm"] = true
+    ["org.wezfurlong.wezterm"] = true,
+    ["md.Obsidian"] = true,
   }
 
   if activeWindow ~= nil and terminals[activeWindow.class] then

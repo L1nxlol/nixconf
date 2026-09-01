@@ -9,3 +9,8 @@ hl.window_rule({
     size = { 700, 450 },
     center = true,
 })
+
+hl.window_rule({
+  match = { class = "md.Obsidian" },
+  tag = "+hyprglass_preset_dimmed"
+})
