@@ -52,7 +52,7 @@
     home-manager
     
       
-  # LANGUAGES #
+    # LANGUAGES #
     lua
     adoptopenjdk-icedtea-web
 
