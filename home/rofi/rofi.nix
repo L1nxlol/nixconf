@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-  xdg.configFile."foldername" = {
-    source = ./path/to/folder;
+  xdg.configFile."rofi" = {
+    source = ../rofi;
     recursive = true;
   };
 }
