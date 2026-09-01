@@ -29,7 +29,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
     '';
 
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/Nix";
+      rebuild = "sudo nixos-rebuild switch --flake ~/Nix --impure";
       hmrebuild = "home-manager switch --flake ~/Nix";
       v = "nvim";
       vim = "nvim";
