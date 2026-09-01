@@ -40,6 +40,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.user = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit zen-browser; };
+            nixpkgs.overlays = [ obsidian-extensions.overlays.default ];
           }
         ];
       };
