@@ -1,4 +1,5 @@
 { pkgs, config, ... }:
+
 {
   imports = [
     ./hyprland/hyprland.nix
@@ -6,6 +7,7 @@
     ./nvim/nvim.nix
     ./kitty/kitty.nix
     ./misc/misc.nix
+    ./obsidian/obsidian.nix
   ];
 
   home.username = "user";

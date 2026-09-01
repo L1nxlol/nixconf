@@ -1,22 +1,31 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    obsidian-extensions = {
+      url = "github:karaolidis/nix-obsidian-extensions";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser }:
+  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [ obsidian-extensions.overlays.default ];
       };
     in
     {
