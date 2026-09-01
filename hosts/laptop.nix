@@ -3,7 +3,10 @@
 {
   networking.hostName = "laptop";
 
-  imports = [ ../pkgs/laptop.nix ]
+  imports = [ 
+    ../configuration.nix
+    ../pkgs/laptop.nix 
+  ];
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [

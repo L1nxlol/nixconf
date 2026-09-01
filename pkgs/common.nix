@@ -26,7 +26,6 @@
     git
     wl-clipboard
     libnotify
-    # swaynotificationcenter
     caligula
     helvum
 
@@ -36,15 +35,8 @@
     eog
     totem
     localsend
-    krita
     gimp
-    obs-studio
     thunar
-
-
-    # ADVANCED GUI TOOLS #
-    blender
-
 
     # SYSTEM #
     zsh
@@ -63,13 +55,6 @@
     rofi
     cliphist
     playerctl
-
-
-    # GAMES #
-    prismlauncher
-    heroic
-    ckan
-    lutris
   ];
 
   programs.nix-ld.enable = true;
@@ -89,7 +74,6 @@
     hyprland.enable = true;
     zsh.enable = true;
     hyprlock.enable = true;
-    steam.enable = true;
     java.enable = true;
     java.package = pkgs.jdk25;
   };
@@ -97,10 +81,4 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   services.displayManager.ly.enable = true;
   services.flatpak.enable = true;
-  services.xserver = {
-    enable = true;
-    desktopManager = {
-      xfce.enable = true;
-    };
-  };
 }

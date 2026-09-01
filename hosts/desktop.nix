@@ -3,7 +3,10 @@
 {
   networking.hostName = "desktop"; 
 
-  imports = [ ../pkgs/desktop.nix ]
+  imports = [ 
+    ../configuration.nix
+    ../pkgs/desktop.nix 
+  ];
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [

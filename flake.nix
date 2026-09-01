@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +14,7 @@
 
     obsidian-extensions = {
       url = "github:karaolidis/nix-obsidian-extensions";
-    inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -27,13 +26,12 @@
         config.allowUnfree = true;
         overlays = [ obsidian-extensions.overlays.default ];
       };
-    in
-    {
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+
+      mkHost = hostFile: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit zen-browser; };
         modules = [
-          ./configuration.nix
+          hostFile
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -43,6 +41,12 @@
             nixpkgs.overlays = [ obsidian-extensions.overlays.default ];
           }
         ];
+      };
+    in
+    {
+      nixosConfigurations = {
+        desktop = mkHost ./hosts/desktop.nix;
+        laptop  = mkHost ./hosts/laptop.nix;
       };
 
       homeConfigurations.user = home-manager.lib.homeManagerConfiguration {

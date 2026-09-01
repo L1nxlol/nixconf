@@ -58,6 +58,7 @@
 
   users.users."user" = {
     isNormalUser = true;
+    home = "/home/user";
     description = "user";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm"];
     shell = pkgs.zsh;
