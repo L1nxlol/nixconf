@@ -3,9 +3,8 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
-      ./pkgs.nix
-      # ./home/home.nix
+      /etc/nixos/hardware-configuration.nix
+      ./pkgs/common.nix
     ];
 
   # Bootloader.
@@ -13,7 +12,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
-  # boot.loader.grub.useOSProber = true;
 
   programs.dconf.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -22,7 +20,6 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;  
   
-  networking.hostName = "desktop"; 
   networking.wireless.enable = true;  
   networking.networkmanager.enable = true;
   networking.nameservers = [ "9.9.9.9"];
@@ -69,16 +66,6 @@
   };
 
   programs.nix-ld.enable = true;
-
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [
-    53317 # Local Send
-    2137
-  ];
-  networking.firewall.allowedUDPPorts = [ 
-    53317 # Local Send
-    2137
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
