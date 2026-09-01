@@ -42,7 +42,7 @@
     thunar
 
 
-    # ADVANCED GUIS #
+    # ADVANCED GUI TOOLS #
     blender
 
 
