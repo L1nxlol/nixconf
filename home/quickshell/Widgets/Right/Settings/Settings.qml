@@ -33,7 +33,7 @@ Rectangle{
 
     ButtonEntry {
       eName: "Rebuild"
-      onClickRequest: Quickshell.execDetached(["kitty", "--class", "kitty-float", "-e", "bash", "-c", "sudo nixos-rebuild switch --flake ~/Nix; exec bash"])
+      onClickRequest: Quickshell.execDetached(["kitty", "--class", "kitty-float", "-e", "bash", "-c", "sudo nixos-rebuild switch --flake ~/Nix --impure; exec bash"])
     }
 
     ButtonEntry {
