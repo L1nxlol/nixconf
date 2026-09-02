@@ -123,7 +123,7 @@ PanelWindow {
 
     RightContainer {
       id: rightContainerce7050
-      anchors.rightMargin: 10
+      anchors.rightMargin: States.hostname === "laptop" ? 45 : 10
     }
   }
   
