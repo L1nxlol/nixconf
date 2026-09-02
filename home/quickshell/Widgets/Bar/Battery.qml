@@ -40,12 +40,21 @@ Loader {
         font.pixelSize: 12
         color: Theme.highlight
         text: {
-          if (parent.fullyCharged) return "F"
-          else if (parent.charging) return "C"
-          else if (parent.batPercentage > 75) return "75"
-          else if (parent.batPercentage > 50) return "50"
-          else if (parent.batPercentage > 50) return "50"
-          else return "t"
+          if (parent.fullyCharged) return "󱟢";
+
+          else if (parent.charging) {
+            if (parent.batPercentage > 80) return "󰂅";
+            else if (parent.batPercentage > 60) return "󰢞";
+            else if (parent.batPercentage > 40) return "󰢝";
+            else if (parent.batPercentage > 20) return "󰂇";
+            else return "󰢟";
+          }
+
+          else if (parent.batPercentage > 80) return "󰁹";
+          else if (parent.batPercentage > 60) return "󰂀";
+          else if (parent.batPercentage > 40) return "󰁾";
+          else if (parent.batPercentage > 20) return "󰁼";
+          else return "󱃍";
         }
       }
     }
