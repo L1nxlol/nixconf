@@ -72,6 +72,7 @@
     enable = true;
     settings = {
       animation = "dur_file";
+      full_color = true;
       auth_fails = "3";
       battery_id = "BAT_1";
       bigclock = "en";

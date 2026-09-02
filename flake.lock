@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "durdraw": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1784536396,
-        "narHash": "sha256-UNj4jHB0DrmfFiOlbkiqjClPj+eS9NGX1cS6A0993nA=",
-        "owner": "durdraw",
-        "repo": "durdraw",
-        "rev": "cf63d7445c00c5db1ee2dd28df8325649045b803",
-        "type": "github"
-      },
-      "original": {
-        "owner": "durdraw",
-        "repo": "durdraw",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -27,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788317453,
-        "narHash": "sha256-BTVJDWIuGa5ffxQEG5WujOOm3eXPw3gZX42Wvm32gb8=",
+        "lastModified": 1788355065,
+        "narHash": "sha256-gAz5oTI7ur34CfuakQduiQd/2ZhO62Bn2XXg08nZYYQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b8350fcdf54ccf553e46408053b1ac5b7038c18b",
+        "rev": "d9d750e4fc11c10cab2da677bdd31e427f3a3a71",
         "type": "github"
       },
       "original": {
@@ -79,7 +59,6 @@
     },
     "root": {
       "inputs": {
-        "durdraw": "durdraw",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "obsidian-extensions": "obsidian-extensions",
