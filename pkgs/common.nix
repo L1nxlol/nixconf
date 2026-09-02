@@ -27,6 +27,7 @@
     wl-clipboard
     libnotify
     caligula
+    upower
     helvum
 
 
@@ -79,6 +80,9 @@
   };
   
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  services.displayManager.ly.enable = true;
-  services.flatpak.enable = true;
+  services = { 
+    displayManager.ly.enable = true;
+    flatpak.enable = true;
+    upower.enable = true;
+  };
 }
