@@ -68,6 +68,18 @@
 
   programs.nix-ld.enable = true;
 
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "dur_file";
+      auth_fails = "3";
+      battery_id = "BAT_1";
+      bigclock = "en";
+      default_input = "password";
+      dur_file_path = "/home/user/Nix/home/resources/bh.dur";
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

@@ -16,9 +16,14 @@
       url = "github:karaolidis/nix-obsidian-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    durdraw = {
+      url = "github:durdraw/durdraw";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions }:
+  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions, durdraw }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -48,6 +53,8 @@
         desktop = mkHost ./hosts/desktop.nix;
         laptop  = mkHost ./hosts/laptop.nix;
       };
+
+      environment.systemPackages = [ durdraw.packages.${system}.default ];  
 
       homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
