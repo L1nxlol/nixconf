@@ -31,4 +31,9 @@ Rectangle {
     anchors.verticalCenter: parent.verticalCenter
     anchors.rightMargin: 4
   }
+  Battery {
+    anchors.left: parent.right
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.leftMargin: 4
+  }
 }
