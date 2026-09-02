@@ -75,7 +75,7 @@ Row {
 
     MouseArea {
       anchors.fill: parent
-      onClicked: logoutButton.recentlyClicked ? Quickshell.execDetached(["logout"]) : logoutButton.recentlyClicked = true
+      onClicked: logoutButton.recentlyClicked ? Quickshell.execDetached(["hyprshutdown"]) : logoutButton.recentlyClicked = true
     }
   }
 
@@ -111,7 +111,7 @@ Row {
 
     MouseArea {
       anchors.fill: parent
-      onClicked: srestartButton.recentlyClicked ? Quickshell.execDetached(["systemctl soft-reboot"]) : srestartButton.recentlyClicked = true
+      onClicked: srestartButton.recentlyClicked ? Quickshell.execDetached(["systemctl", "soft-reboot"]) : srestartButton.recentlyClicked = true
     }
   }
 

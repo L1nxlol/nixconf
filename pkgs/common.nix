@@ -43,7 +43,9 @@
     zsh
     dconf
     home-manager
-      
+    hyprshutdown
+    
+
     # LANGUAGES #
     lua
     adoptopenjdk-icedtea-web
