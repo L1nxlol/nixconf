@@ -5,7 +5,7 @@
 
   imports = [ 
     ../configuration.nix
-    ../pkgs/laptop.nix 
+    ../../pkgs/laptop.nix 
   ];
 
   networking.firewall.enable = true;

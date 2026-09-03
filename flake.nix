@@ -16,42 +16,54 @@
       url = "github:karaolidis/nix-obsidian-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions }:
+  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions, grub2-themes }:
     let
       system = "x86_64-linux";
+
+      overlays = [ obsidian-extensions.overlays.default ];
+      specialArgs = { inherit zen-browser; };
+
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config.allowUnfree = true;
-        overlays = [ obsidian-extensions.overlays.default ];
       };
 
       mkHost = hostFile: nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit zen-browser; };
+        inherit system specialArgs grub2-themes;
+
         modules = [
           hostFile
+          grub2-themes.nixosModules.default
+
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.user = import ./home/home.nix;
-            home-manager.extraSpecialArgs = { inherit zen-browser; };
-            nixpkgs.overlays = [ obsidian-extensions.overlays.default ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.user = import ./home/home.nix;
+              extraSpecialArgs = specialArgs;
+            };
+            nixpkgs = { inherit overlays; config.allowUnfree = true; };
           }
         ];
       };
     in
     {
       nixosConfigurations = {
-        desktop = mkHost ./hosts/desktop.nix;
-        laptop  = mkHost ./hosts/laptop.nix;
+        desktop = mkHost ./configuration/hosts/desktop.nix;
+        laptop  = mkHost ./configuration/hosts/laptop.nix;
       };
 
       homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit zen-browser; };
+        extraSpecialArgs = specialArgs;
         modules = [ ./home/home.nix ];
       };
     };
