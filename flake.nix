@@ -36,7 +36,7 @@
       };
 
       mkHost = hostFile: nixpkgs.lib.nixosSystem {
-        inherit system specialArgs grub2-themes;
+        inherit system specialArgs;
 
         modules = [
           hostFile

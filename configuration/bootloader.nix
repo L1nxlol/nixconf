@@ -1,7 +1,6 @@
-{ lig, grub2-theme, config, pkgs, ... }
+{ lig, grub2-theme, config, pkgs, ... }:
 
 {
-
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     supportedFilesystems = [ "ntfs" ];
@@ -29,4 +28,4 @@
       };
     };
   };
-};
+}
