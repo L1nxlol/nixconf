@@ -1,4 +1,4 @@
-{ config, pkgs, ... }
+{ lig, grub2-theme, config, pkgs, ... }
 
 {
 
