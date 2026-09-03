@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [ 
-    krita
+    # krita
     obs-studio
     blender
 
