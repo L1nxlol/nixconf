@@ -2,7 +2,7 @@
 
 {
   networking = {
-    # wireless.enable = true;  
+    wireless.enable = true;  
     networkmanager.enable = true;
     nameservers = [ "9.9.9.9"];
   };
