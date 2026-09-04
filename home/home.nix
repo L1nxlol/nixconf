@@ -68,14 +68,21 @@
     source = ./resources/cursor/aosp-cursors;
     recursive = true;
   };
+    
+  home.file.".local/share/icons/Vimix cursors" = {
+    source = ./resources/cursor/Vimix-cursors;
+    recursive = true;
+  };
 
   gtk.cursorTheme = {
-    name = "AOSP Cursors";
+    # name = "AOSP Cursors";
+    name = "Vimix cursors";
     size = 14;
   };
 
   home.sessionVariables = {
-    XCURSOR_THEME = "AOSP Cursors";
+    # XCURSOR_THEME = "AOSP Cursors";
+    XCURSOR_THEME = " Vimix cursors";
     XCURSOR_SIZE = "14";
   };
 
