@@ -29,6 +29,7 @@
     caligula
     upower
     helvum
+    brightnessctl
 
 
     # GUI BASIC TOOLS # 
@@ -39,11 +40,14 @@
     gimp
     thunar
 
+
     # SYSTEM #
     zsh
     dconf
     home-manager
     hyprshutdown
+    llama-cpp-rocm
+    aichat
     
 
     # LANGUAGES #
@@ -84,5 +88,10 @@
   services = { 
     flatpak.enable = true;
     upower.enable = true;
+    gnome = {
+      tracker.enable = true;
+      tracker-miners.enable = true;
+    };
+    gvfs.enable = true;
   };
 }
