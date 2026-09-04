@@ -43,11 +43,20 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 
--- MAIN KEYBINDS
-hl.bind("ALT + space", hl.dsp.exec_cmd("rofi -show drun"))
+-- SHORTCUT KEYBINDS
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd("kitty --class kitty-float -e zsh -lc 'btop; exec zsh'"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("kitty"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("zen"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("~/Nix/scripts/power"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("tor-browser"))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obs"))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("steam"))
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("localsend_app"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("eog"))
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("totem"))
+
+
+-- SYSTEM KEYBINDS
+hl.bind("ALT + space", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
@@ -56,11 +65,11 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("qs -p /home/user/Nix/home/quickshell
 
 
 -- WINDOW MANAGEMENT
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + B", hl.dsp.window.float())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + CTRL + F", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + F", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + Tab",         hl.dsp.workspace.toggle_special("tab"))
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.window.move({ workspace = "special:tab" }))

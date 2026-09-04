@@ -14,3 +14,10 @@ hl.window_rule({
   match = { class = "md.Obsidian" },
   tag = "+hyprglass_preset_dimmed"
 })
+
+hl.window_rule({
+    match = { class = "org.localsend.localsend_app" },
+    float = true,
+    size = { 600, 550 },
+    center = true,
+})
