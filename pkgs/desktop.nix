@@ -1,4 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, system, nix-hug, ... }:
+
+let
+  qwen3 = import ../cPkgs/models/Qwen3-30B-A3B.nix {
+    inherit nix-hug system;
+  };
+in 
 {
   environment.systemPackages = with pkgs; [ 
     # krita
@@ -10,6 +16,9 @@
     heroic
     ckan
     lutris
+
+    # MODELS #
+    qwen3
   ];
 
   programs = {

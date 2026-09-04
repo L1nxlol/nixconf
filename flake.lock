@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788355065,
-        "narHash": "sha256-gAz5oTI7ur34CfuakQduiQd/2ZhO62Bn2XXg08nZYYQ=",
+        "lastModified": 1788487777,
+        "narHash": "sha256-Ro/e1N4ZR8/XaFF+sF9SgfPK79HM5YNEppzFj8p+0Ak=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d9d750e4fc11c10cab2da677bdd31e427f3a3a71",
+        "rev": "693e8ce0fb240a73c116a03cfd7b19269c87af88",
         "type": "github"
       },
       "original": {
@@ -40,13 +40,33 @@
         "type": "github"
       }
     },
+    "nix-hug": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786911196,
+        "narHash": "sha256-5VwlbqoQAu1Rnw9+UlIqUX/0ia8xZ6vYWQs8dzVVvek=",
+        "owner": "eordano",
+        "repo": "nix-hug",
+        "rev": "e14a017a2c4e1e0fc8bc3be2a033d173cb9752d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eordano",
+        "repo": "nix-hug",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1788316716,
-        "narHash": "sha256-bc7rSpXIdn9QWGNqfWcPZWOhEVF8NoeAZkWq0XWnf/k=",
+        "lastModified": 1788404924,
+        "narHash": "sha256-lhEhY8X5EgkQ/eg6IFz4cc8jRuSYSvnxx1al7d1dvZ0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3ed67ec0a4d3c7ab4ae1f04f8ee8df07bfa506a2",
+        "rev": "0968519e14f7aa7d3e9b389682bd74d2b51c8ce8",
         "type": "github"
       },
       "original": {
@@ -64,11 +84,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1788427225,
-        "narHash": "sha256-a2lLEvXMB6fbdvSo+A3DCQsXkfO0MFzZhpYsHKZnSoY=",
+        "lastModified": 1788513196,
+        "narHash": "sha256-G4DHvrhmF02Xq6vNI9F4SldwLpm7JW8l2aiMI5kOdQM=",
         "owner": "karaolidis",
         "repo": "nix-obsidian-extensions",
-        "rev": "d8f3d96202150dc1a8c2126ca691756ce38fca2f",
+        "rev": "fc7e26037946937c4d4841900a4b2314a208915e",
         "type": "github"
       },
       "original": {
@@ -81,6 +101,7 @@
       "inputs": {
         "grub2-themes": "grub2-themes",
         "home-manager": "home-manager",
+        "nix-hug": "nix-hug",
         "nixpkgs": "nixpkgs",
         "obsidian-extensions": "obsidian-extensions",
         "zen-browser": "zen-browser"
