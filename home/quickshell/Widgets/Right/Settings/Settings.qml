@@ -29,7 +29,11 @@ Rectangle{
       onToggleRequest: States.wifiThingyState = !States.wifiThingyState
     }
 
-    SwitchEntry {}
+    SwitchEntry {
+      eName: "Microphone Mute"
+      isToggled: States.micMuted
+      onToggleRequest: States.micMuted = !States.micMuted
+    }
 
     ButtonEntry {
       eName: "Rebuild"
@@ -48,7 +52,6 @@ Rectangle{
 
     // hot corners
     // lang sellect
-    // hm rebuild
-    //
+    // battery saver
   }
 }
