@@ -35,6 +35,12 @@ Rectangle{
       onToggleRequest: States.micMuted = !States.micMuted
     }
 
+    SwitchEntry {
+      eName: "Locked"
+      isToggled: States.locked
+      onToggleRequest: States.locked = ~States.locked
+    }
+
     ButtonEntry {
       eName: "Rebuild"
       onClickRequest: Quickshell.execDetached(["kitty", "--class", "kitty-float", "-e", "bash", "-c", "sudo nixos-rebuild switch --flake ~/Nix --impure; exec bash"])
