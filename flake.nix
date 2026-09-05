@@ -21,19 +21,14 @@
       url = "github:vinceliuice/grub2-themes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-hug = {
-      url = "github:eordano/nix-hug";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions, grub2-themes, nix-hug }:
+  outputs = { self, nixpkgs, home-manager, zen-browser, obsidian-extensions, grub2-themes }:
     let
       system = "x86_64-linux";
 
       overlays = [ obsidian-extensions.overlays.default ];
-      specialArgs = { inherit zen-browser nix-hug system; };
+      specialArgs = { inherit zen-browser; };
 
       pkgs = import nixpkgs {
         inherit system overlays;
