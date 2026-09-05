@@ -21,9 +21,9 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
     clear-scrollback() {
-      printf '\e[3J'
-      sleep 0.05
-      clear
+      printf '\033[3J\033[H\033[2J'
+      zle reset-prompt
+      zle redisplay
     }
     zle -N clear-scrollback
     bindkey '^L' clear-scrollback
@@ -39,7 +39,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       update = "sudo nix flake update --flake ~/Nix";
       fastfetch = "fastfetch -c '/home/user/Nix/home/misc/fastfetch.jsonc'";
 
-      clear = "rintf '\\e[3J' && clear";
+      clear = "printf '\\033[3J\\033[H\\033[2J'";
     };
   };
 }
