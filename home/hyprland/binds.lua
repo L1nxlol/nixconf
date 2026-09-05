@@ -61,7 +61,7 @@ hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" "$HOME/Pictures/Screenshots
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("qs -p /home/user/Nix/home/quickshell/ ipc call screen-lock lock"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -p /home/user/Nix/home/quickshell/ ipc call screen-lock lock"))
 
 
 -- WINDOW MANAGEMENT
