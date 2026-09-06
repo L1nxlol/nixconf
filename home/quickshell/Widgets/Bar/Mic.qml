@@ -6,7 +6,6 @@ import "../../Services/"
 
 Rectangle {
   property var micNode: Pipewire.defaultAudioSource
-  property bool isMuted: micNode?.audio?.muted ?? true
 
   PwObjectTracker {
     objects: [micNode]
@@ -29,7 +28,7 @@ Rectangle {
     anchors.fill: parent 
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
-    text: isMuted? "" : ""
+    text: States.micMuted? "" : ""
   }
 
   MouseArea {
