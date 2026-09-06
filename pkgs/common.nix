@@ -61,6 +61,10 @@
     rofi
     cliphist
     playerctl
+
+
+    # HYPRLAND #
+    # hyprlandPlugins.hypr-dynamic-cursors
   ];
 
   programs.nix-ld.enable = true;
