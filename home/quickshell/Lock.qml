@@ -30,6 +30,8 @@ IpcHandler {
   target: "screen-lock"
   function lock() {
     States.locked = !States.locked
+    States.rightMenu = false
+    States.leftMenu = false
   }
 }
 
