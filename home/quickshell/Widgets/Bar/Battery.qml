@@ -32,7 +32,7 @@ Loader {
         font.family: Theme.font
         font.pixelSize: 10
         color: Theme.highlight
-        text: parent.batPercentage + "%"
+        text: parent.batPercentage + " %"
       }
 
       Text {
