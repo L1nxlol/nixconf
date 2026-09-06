@@ -8,8 +8,6 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("awww-daemon")
-  -- hl.exec_cmd("hyprctl setcursor 'Vimix Cursors' 14")
-  -- hl.exec_cmd("hyprctl setcursor 'AOSP Cursors' 14")
   hl.exec_cmd("systemctl --user start blueman-applet")
   hl.exec_cmd("wl-paste --type text --watch cliphist store")
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
@@ -25,6 +23,5 @@ env = {
   { "QT_QPA_PLATFORMTHEME", "qt6ct" },
 }
 
--- hl.env("XCURSOR_THEME", "AOSP Cursors")
-hl.env("XCURSOR_THEME", "Vimix cursors")
+hl.env("XCURSOR_THEME", "Vimix-cursors")
 hl.env("XCURSOR_SIZE", "14")

@@ -82,6 +82,7 @@ hl.config({
 
 
 hl.plugin.load("/home/user/Nix/home/hyprland/plugins/hyprglass.so")
+-- hl.plugin.load("/home/user/Nix/home/hyprland/plugins/dynamic-cursors.so")
 
 
 
@@ -93,3 +94,4 @@ require("binds")
 require("layout")
 require("rules")
 require("hyprglass")
+-- rquire("cursor")
