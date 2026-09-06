@@ -35,10 +35,17 @@
     cava 
     lavat 
 
-    # CUSTOM PKGS #
+    
+    vimix-cursors
+    nerd-fonts.geist-mono
+
+    # HYPRLAND PLUGINS #
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
       mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
-    })
+    })    
+    # (pkgs.callPackage ../cPkgs/dynamic-cursors.nix {
+    #   mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
+    # })
   ];
 
 
@@ -58,34 +65,22 @@
     };
   };
 
+  # home.file.".local/share/fonts" = {
+  #   source = ./resources/fonts;
+  #   recursive = true;
+  # };
 
-  home.file.".local/share/fonts" = {
-    source = ./resources/fonts;
-    recursive = true;
-  };
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.vimix-cursors;
+    name = "Vimix-cursors";
+    size = 30;
+    gtk.enable = true;
+    x11.enable = true;
 
-  home.file.".local/share/icons/AOSP Cursors" = {
-    source = ./resources/cursor/aosp-cursors;
-    recursive = true;
+    hyprcursor.enable = true;
+    hyprcursor.size = 24;
   };
-    
-  home.file.".local/share/icons/Vimix cursors" = {
-    source = ./resources/cursor/Vimix-cursors;
-    recursive = true;
-  };
-
-  gtk.cursorTheme = {
-    # name = "AOSP Cursors";
-    name = "Vimix cursors";
-    size = 14;
-  };
-
-  home.sessionVariables = {
-    # XCURSOR_THEME = "AOSP Cursors";
-    XCURSOR_THEME = " Vimix cursors";
-    XCURSOR_SIZE = "14";
-  };
-
 
   programs.git = {
     enable = true;
@@ -96,5 +91,4 @@
   };
 
   
-  # services.swaync.enable = true;
 }
