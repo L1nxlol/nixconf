@@ -108,8 +108,18 @@ PanelWindow {
       anchors.verticalCenter: parent.verticalCenter
       spacing: 10
 
-      Clock {
-        anchors.leftMargin: 30
+      Audio {
+        anchors.leftMargin: States.locked ? 28 : 92
+      }
+
+      Loader {
+        active: !States.locked
+        anchors.verticalCenter: parent.verticalCenter
+
+        sourceComponent: Clock {
+          anchors.leftMargin: 30
+          anchors.verticalCenter: parent.verticalCenter
+        }
       }
 
       Logo {}

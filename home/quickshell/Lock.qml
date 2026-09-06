@@ -29,9 +29,13 @@ PanelWindow {
 IpcHandler {
   target: "screen-lock"
   function lock() {
-    States.locked = !States.locked
+    States.locked = true
     States.rightMenu = false
     States.leftMenu = false
+  }
+
+  function unlock() {
+    States.locked = false
   }
 }
 
