@@ -14,7 +14,7 @@ Loader {
   sourceComponent: Rectangle {
     color: Theme.border
     anchors.verticalCenter: batroot.verticalCenter
-    width: 35
+    width: 44
     height: 24
     radius: 20
 
@@ -32,7 +32,7 @@ Loader {
         font.family: Theme.font
         font.pixelSize: 10
         color: Theme.highlight
-        text: parent.batPercentage + " %"
+        text: " " + parent.batPercentage + "%"
       }
 
       Text {
@@ -40,21 +40,21 @@ Loader {
         font.pixelSize: 12
         color: Theme.highlight
         text: {
-          if (parent.fullyCharged) return "󱟢";
+          if (parent.fullyCharged) return "󱟢 ";
 
           else if (parent.charging) {
-            if (parent.batPercentage > 80) return "󰂅";
-            else if (parent.batPercentage > 60) return "󰢞";
-            else if (parent.batPercentage > 40) return "󰢝";
-            else if (parent.batPercentage > 20) return "󰂇";
-            else return "󰢟";
+            if (parent.batPercentage > 80) return "󰂅 ";
+            else if (parent.batPercentage > 60) return "󰢞 ";
+            else if (parent.batPercentage > 40) return "󰢝 ";
+            else if (parent.batPercentage > 20) return "󰂇 ";
+            else return "󰢟 ";
           }
 
-          else if (parent.batPercentage > 80) return "󰁹";
-          else if (parent.batPercentage > 60) return "󰂀";
-          else if (parent.batPercentage > 40) return "󰁾";
-          else if (parent.batPercentage > 20) return "󰁼";
-          else return "󱃍";
+          else if (parent.batPercentage > 80) return "󰁹 ";
+          else if (parent.batPercentage > 60) return "󰂀 ";
+          else if (parent.batPercentage > 40) return "󰁾 ";
+          else if (parent.batPercentage > 20) return "󰁼 ";
+          else return "󱃍 ";
         }
       }
     }
