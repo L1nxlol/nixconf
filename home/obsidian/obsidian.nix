@@ -8,7 +8,8 @@
 
 programs.obsidian = {
   enable = true;
-  vaults."notes".target = "Documents/notes";
+  vaults."biol".target = "Documents/notes/biol";
+  vaults."chem".target = "Documents/notes/chem";
 
   defaultSettings = {
     app.vimMode = true;
