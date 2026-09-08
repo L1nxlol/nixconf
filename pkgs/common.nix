@@ -46,8 +46,6 @@
     dconf
     home-manager
     hyprshutdown
-    llama-cpp-rocm
-    aichat
     
 
     # LANGUAGES #
