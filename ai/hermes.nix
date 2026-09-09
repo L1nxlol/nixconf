@@ -8,7 +8,7 @@
 
     settings = {
       model.base_url = "http://localhost:8080/v1";
-      model.default = "qwen3-coder-30b-a3b";
+      model.default = "Qwen3.6-35B-A3B-UD-Q6_K_XL";
 
       toolsets = [
         "web"

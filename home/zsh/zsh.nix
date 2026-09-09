@@ -39,6 +39,8 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       update = "sudo nix flake update --flake ~/Nix";
       fastfetch = "fastfetch -c '/home/user/Nix/home/misc/fastfetch.jsonc'";
 
+      hermes = "hermes-sandboxed";
+
       clear = "printf '\\033[3J\\033[H\\033[2J'";
     };
   };
