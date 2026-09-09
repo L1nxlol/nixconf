@@ -25,7 +25,7 @@
     isNormalUser = true;
     home = "/home/user";
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "render" "video" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];

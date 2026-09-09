@@ -7,7 +7,17 @@
 
   systemd.user.services.llama-server = {
     serviceConfig = {
-      ExecStart = "${pkgs.llama-cpp-rocm}/bin/llama-server -m /var/lib/models/current.gguf --alias Qwen3.6-35B-A3B-UD-Q6_K_XL --port 8080 -ngl 99 -ot ${"''"}.ffn_.*_exps.=CPU${"''"}";
+      ExecStart = "${pkgs.llama-cpp-rocm}/bin/llama-server \
+        -m /var/lib/models/current.gguf \
+        --alias Qwen3.6-35B-A3B-UD-Q6_K_XL \
+        --host 127.0.0.1 \
+        --port 8080 \
+        --ctx-size 65536 \
+        --parallel 1 \
+        --cache-type-k q8_0 \
+        --cache-type-v q8_0 \
+        -ngl 99 \
+        -ot ${"''"}.ffn_.*_exps.=CPU${"''"}";
 
       # hardening
       NoNewPrivileges = true;
@@ -28,7 +38,7 @@
         "/dev/kfd rw"
         "/dev/dri rw"
       ];
-      SupplementaryGroups = [ "render" "video" ];
+      # SupplementaryGroups = [ "render" "video" ];
     };
     wantedBy = [ "default.target" ];
   };

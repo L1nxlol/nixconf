@@ -38,7 +38,7 @@
 
 
 # RISKY \/\/\/
-{ pkgs, ... }:
+{ pkgs, hermes-agent, inputs, system, ... }:
 
 {
   environment.systemPackages = [
@@ -47,9 +47,9 @@
         --ro-bind /nix /nix \
         --ro-bind /etc /etc \
         --dir /home/agent \
-        --chdir /home/agent \
         --bind "$HOME/.hermes" /home/agent/.hermes \
         --bind "$HOME/Agent" /home/workspace/ \
+        --chdir /home/agent \
         --setenv HOME /home/agent \
         --tmpfs /tmp \
         --dev /dev \
@@ -58,7 +58,7 @@
         --die-with-parent \
         --new-session \
         --cap-drop ALL \
-        hermes chat "$@"
+        ${inputs.hermes-agent.packages.${pkgs.system}.default}/bin/hermes
     '')
   ];
 }
