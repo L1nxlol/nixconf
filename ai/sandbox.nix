@@ -58,7 +58,7 @@
         --die-with-parent \
         --new-session \
         --cap-drop ALL \
-        ${inputs.hermes-agent.packages.${pkgs.system}.default}/bin/hermes
+        ${hermes-agent.packages.${system}.default}/bin/hermes
     '')
   ];
 }

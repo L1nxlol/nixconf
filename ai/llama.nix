@@ -33,7 +33,8 @@
       MemoryDenyWriteExecute = false;
       ReadOnlyPaths = [ "/var/lib/models" ];
 
-      # ROCm device access — required, don't drop these
+      # ROCm device access
+      # Required don't drop these
       DeviceAllow = [
         "/dev/kfd rw"
         "/dev/dri rw"
