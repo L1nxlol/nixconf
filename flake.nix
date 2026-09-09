@@ -30,7 +30,7 @@
       system = "x86_64-linux";
 
       overlays = [ obsidian-extensions.overlays.default ];
-      specialArgs = { inherit zen-browser; };
+      specialArgs = { inherit zen-browser hermes-agent system; };
 
       pkgs = import nixpkgs {
         inherit system overlays;
