@@ -9,7 +9,8 @@
     ./rofi/rofi.nix
     ./misc/misc.nix
     ./obsidian/obsidian.nix
-  ];
+    ./zen/zen.nix
+  ]; 
 
   home.username = "user";
   home.homeDirectory = "/home/user";
@@ -65,10 +66,6 @@
     };
   };
 
-  # home.file.".local/share/fonts" = {
-  #   source = ./resources/fonts;
-  #   recursive = true;
-  # };
 
   home.pointerCursor = {
     enable = true;
