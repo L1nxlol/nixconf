@@ -50,6 +50,7 @@
     --bind "$HOME/.hermes" /home/agent/.hermes \
     --bind "$HOME/Agent" /home/workspace/ \
     --chdir /home/agent \
+    --ro-bind /run/current-system /run/current-system
     --setenv HOME /home/agent \
     --tmpfs /tmp \
     --dev /dev \
