@@ -37,6 +37,7 @@ Rectangle {
       Layout.fillHeight: true
       horizontalAlignment: Text.AlignHCenter
       verticalAlignment: Text.AlignVCenter
+      // anchors.centerIn: parent
       font.family: Theme.font
       font.pixelSize: 30
       color: Theme.highlight
@@ -45,7 +46,6 @@ Rectangle {
         if (vol <= 0) return ""
         else if (vol < 0.3) return ""
         else if (vol < 0.65) return ""
-        // else if (vol < 0.65) return "󰕾"
         else return ""
       }
     }
