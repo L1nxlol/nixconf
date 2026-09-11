@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
 home.file.".p10k.zsh".source = ./p10k.zsh;
 
@@ -27,6 +28,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
     }
     zle -N clear-scrollback
     bindkey '^L' clear-scrollback
+    bindkey '^H' backward-kill-word
     '';
 
     shellAliases = {
