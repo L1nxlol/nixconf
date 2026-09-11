@@ -10,6 +10,7 @@
     ./misc/misc.nix
     ./obsidian/obsidian.nix
     ./zen/zen.nix
+    ./walker/walker.nix
   ]; 
 
   home.username = "user";
