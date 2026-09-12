@@ -31,6 +31,7 @@
     musikcube
     gnome-boxes
     onlyoffice-desktopeditors
+    elephant
 
     # TERMINAL ANIMATIONS #
     peaclock

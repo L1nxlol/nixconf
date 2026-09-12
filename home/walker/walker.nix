@@ -1,11 +1,15 @@
 { inputs, pkgs, config, ... }:
 
 {  
-  imports = [ inputs.walker.homeManagerModules.default ];
+  # imports = [ inputs.walker.homeManagerModules.default ];
+
+  imports = [
+   ./elephant.nix
+  ];
 
   services.walker = {
     enable = true;
-    runAsService = true;
+    enableElephantIntegration = true;
 
     settings = {
       hotreload_theme = false;
@@ -14,7 +18,7 @@
 
       search.placeholder = "Search";
 
-      providers.prexixes = [
+      providers.prefixes = [
         { prefix = "/"; provider = "files"; }
         { prefix = "="; provider = "calc"; }
       ];
