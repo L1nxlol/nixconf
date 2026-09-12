@@ -1,0 +1,7 @@
+{ config, ... }:
+
+{
+  xdg.desktopEntries = {
+    
+  };
+}

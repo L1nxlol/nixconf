@@ -1,10 +1,9 @@
 { inputs, pkgs, config, ... }:
 
 {  
-  # imports = [ inputs.walker.homeManagerModules.default ];
-
   imports = [
    ./elephant.nix
+   ./desktop.nix
   ];
 
   services.walker = {
@@ -26,6 +25,8 @@
   };
 
   home.activation.linkWalkerTheme = config.lib.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.config/walker
+    mkdir -p $HOME/.config/walker/themes
     ln -sfn ${config.home.homeDirectory}/Nix/home/walker/theme.css \
     ${config.home.homeDirectory}/.config/walker/themes/default.css
   '';
