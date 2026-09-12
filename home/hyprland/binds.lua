@@ -46,7 +46,7 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- SHORTCUT KEYBINDS
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd("kitty --class kitty-float -e zsh -lc 'btop; exec zsh'"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("kitty"))
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("zen"))
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("zen-beta"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("tor-browser"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obs"))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("steam"))
@@ -56,6 +56,7 @@ hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("totem"))
 
 
 -- SYSTEM KEYBINDS
+hl.bind("SUPER +Super_L", hl.dsp.exec_cmd("walker"), { release = true })
 hl.bind("ALT + space", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
