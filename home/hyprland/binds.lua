@@ -15,10 +15,10 @@ local dirKeys = {
 
 for i = 1, 10 do
   if i == 10 then key = 0 else key = i end
-    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true })
-    hl.bind("SUPER + ".. key, hl.dsp.focus({workspace = i}))
-    hl.bind("SUPER + SHIFT + ".. key, hl.dsp.window.move({workspace = i}))
-    hl.bind("SUPER + CTRL + ".. key, hl.dsp.window.move({workspace = i, follow = false}))
+  hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true })
+  hl.bind("SUPER + ".. key, hl.dsp.focus({workspace = i}))
+  hl.bind("SUPER + SHIFT + ".. key, hl.dsp.window.move({workspace = i}))
+  hl.bind("SUPER + CTRL + ".. key, hl.dsp.window.move({workspace = i, follow = false}))
 end
 
 for i = 11, 20 do
@@ -56,7 +56,7 @@ hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("totem"))
 
 
 -- SYSTEM KEYBINDS
-hl.bind("SUPER +Super_L", hl.dsp.exec_cmd("walker"), { release = true })
+-- hl.bind("SUPER + Super_L", hl.dsp.exec_cmd("walker"), { release = true })
 hl.bind("ALT + space", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind("Print", hl.dsp.exec_cmd('grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd('grim "$HOME/Pictures/Screenshots/$(date +%F_%H-%M-%S).png"'))
