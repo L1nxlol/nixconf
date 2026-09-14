@@ -11,15 +11,15 @@
     enable = true;
     profiles.default = {
       settings = {
-        "zen.welcome-screen.seen" = true; #works
+        "zen.welcome-screen.seen" = true;
 
-        "zen.view.sidebar-expanded" = false; #works
-        "zen.view.compact.hide-sidebar" = true; #works
-        "zen.view.compact.hide-toolbar" = true; #works
+        "zen.view.sidebar-expanded" = false;
+        "zen.view.compact.hide-sidebar" = true;
+        "zen.view.compact.hide-toolbar" = true;
 
         "zen.urlbar.behavior" = "float";
 
-        "zen.view.experimental-no-window-controls" = true;
+        "zen.view.experimental-no-window-controls" = true; # doesnt work
 
         "network.trr.mode" = 3;
         "network.trr.uri" = "https://dns.quad9.net/dns-query";
