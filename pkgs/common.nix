@@ -51,6 +51,7 @@
     # LANGUAGES #
     lua
     adoptopenjdk-icedtea-web
+    python313
 
 
     # DE #

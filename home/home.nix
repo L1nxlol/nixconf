@@ -38,6 +38,9 @@
     cava 
     lavat 
 
+
+    pyright
+
     
     vimix-cursors
     nerd-fonts.geist-mono
