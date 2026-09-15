@@ -11,3 +11,11 @@ vim.lsp.enable(servers)
 -- require("lspconfig").qmlls.setup {}
 -- read :h vim.lsp.config for changing options of lsp servers 
 
+local on_attach = require("nvchad.configs.lspconfig").on_attach
+local capabilities = require("nvchad.configs.lspconfig").capabilities
+
+vim.lsp.config("pyright", {
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+vim.lsp.enable("pyright")
