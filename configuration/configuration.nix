@@ -19,6 +19,8 @@
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;  
+
+  fonts.fontconfig.enable = true;
   
 
   users.users."user" = {

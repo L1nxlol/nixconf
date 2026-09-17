@@ -43,7 +43,9 @@
 
     
     vimix-cursors
+    geist-font
     nerd-fonts.geist-mono
+    nerd-fonts.symbols-only
 
     # HYPRLAND PLUGINS #
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
@@ -91,6 +93,4 @@
       user.email = "DJTrump@cumallover.me";
     };
   };
-
-  
 }
