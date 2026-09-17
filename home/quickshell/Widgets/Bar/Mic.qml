@@ -23,7 +23,7 @@ Rectangle {
 
   Text {
     font.family: Theme.font
-    font.pixelSize: 30
+    font.pixelSize: 20
     color: micInUse? Theme.border : Theme.highlight
     anchors.fill: parent 
     horizontalAlignment: Text.AlignHCenter

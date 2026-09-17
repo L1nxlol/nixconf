@@ -20,7 +20,7 @@ Item {
     anchors.topMargin: 4
     anchors.leftMargin: 10
     font.family: Theme.font
-    font.pixelSize: 18
+    font.pixelSize: 15
     color: Theme.highlight
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter

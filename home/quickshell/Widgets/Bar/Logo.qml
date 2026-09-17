@@ -19,12 +19,13 @@ Rectangle {
   }
 
   Text {
-    font.family: Theme.font
-    font.pixelSize: 30
+    font.family: Theme.iconFont
+    font.pixelSize: 24
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     color: Theme.highlight
     anchors.fill: parent 
+    anchors.bottomMargin: 2
     text: "󱄅"
   }
 }
