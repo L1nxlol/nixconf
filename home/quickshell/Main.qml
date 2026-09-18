@@ -136,16 +136,24 @@ PanelWindow {
       anchors.rightMargin: States.hostname === "laptop" ? 55 : 10
     }
   }
-  
+
   Behavior on rightSide {
-    SpringAnimation { 
+    SpringAnimation {
+      id: rightSideSpring
       spring: States.rightMenu ? 10 : 3.5
-      damping: States.rightMenu ? 1 : 0.25 
+      damping: States.rightMenu ? 1 : 0.25
+      // onRunningChanged: console.log(
+        // "rightSide spring running:", running,
+        // "spring:", spring, "damping:", damping,
+        // "from:", rightSide, "target:", States.rightMenu ? 300 : 7,
+        // "time:", Date.now()
+      // )
     }
   }
 
   Behavior on leftSide {
     SpringAnimation { 
+      id: leftSideSpring
       spring: States.leftMenu ? 10 : 3.5
       damping: States.leftMenu ? 1 : 0.25 
     }
