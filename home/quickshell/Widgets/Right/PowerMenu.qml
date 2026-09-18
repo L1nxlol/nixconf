@@ -30,7 +30,7 @@ Row {
 
     Text {
       font.family: Theme.font
-      font.pixelSize: 45
+      font.pixelSize: 35
       color: Theme.border
       anchors.fill: parent 
       horizontalAlignment: Text.AlignHCenter
@@ -64,7 +64,7 @@ Row {
 
     Text {
       font.family: Theme.font
-      font.pixelSize: 50
+      font.pixelSize: 30
       color: Theme.border
       anchors.fill: parent 
       horizontalAlignment: Text.AlignHCenter
@@ -100,7 +100,7 @@ Row {
 
     Text {
       font.family: Theme.font
-      font.pixelSize: 45
+      font.pixelSize: 30
       color: Theme.border
       anchors.fill: parent 
       horizontalAlignment: Text.AlignHCenter
@@ -136,7 +136,7 @@ Row {
 
     Text {
       font.family: Theme.font
-      font.pixelSize: 50
+      font.pixelSize: 28
       color: Theme.border
       anchors.fill: parent 
       horizontalAlignment: Text.AlignHCenter
@@ -171,7 +171,7 @@ Row {
 
     Text {
       font.family: Theme.font
-      font.pixelSize: 50
+      font.pixelSize: 29
       color: Theme.border
       anchors.fill: parent 
       horizontalAlignment: Text.AlignHCenter
