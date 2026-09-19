@@ -28,13 +28,13 @@ Row {
   }
 
   PowerButton {
-    icon: ""
+    icon: ""
     iconSize: 28
     onActivated: Quickshell.execDetached(["reboot"])
   }
 
   PowerButton {
-    icon: ""
+    icon: ""
     iconSize: 29
     onActivated: Quickshell.execDetached(["poweroff"])
   }
