@@ -5,7 +5,6 @@
     ./hyprland/hyprland.nix
     ./zsh/zsh.nix
     ./nvim/nvim.nix
-    ./vim/nvim.nix
     ./kitty/kitty.nix
     ./rofi/rofi.nix
     ./misc/misc.nix

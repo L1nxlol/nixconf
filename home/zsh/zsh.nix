@@ -44,9 +44,6 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       hermes = "hermes-sandboxed";
 
       clear = "printf '\\033[3J\\033[H\\033[2J'";
-
-
-      newnvim = "NVIM_APPNAME=nvim-new nvim";
     };
   };
 }
