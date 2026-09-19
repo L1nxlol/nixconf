@@ -9,33 +9,33 @@ Row {
 
   PowerButton {
     icon: "󰍁"
-    iconSize: 35
+    iconSize: 45
     onActivated: Quickshell.execDetached(["hyprlock"])
   }
 
   PowerButton {
     icon: "󰍃"
-    iconSize: 30
+    iconSize: 50
     iconOffsetX: 7
     onActivated: Quickshell.execDetached(["hyprshutdown"])
   }
 
   PowerButton {
     icon: "󰑏"
-    iconSize: 30
+    iconSize: 45
     iconOffsetY: 2
     onActivated: Quickshell.execDetached(["systemctl", "soft-reboot"])
   }
 
   PowerButton {
     icon: ""
-    iconSize: 28
+    iconSize: 46
     onActivated: Quickshell.execDetached(["reboot"])
   }
 
   PowerButton {
     icon: ""
-    iconSize: 29
+    iconSize: 46
     onActivated: Quickshell.execDetached(["poweroff"])
   }
 }
