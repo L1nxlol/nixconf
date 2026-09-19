@@ -5,6 +5,7 @@
     ./hyprland/hyprland.nix
     ./zsh/zsh.nix
     ./nvim/nvim.nix
+    ./vim/nvim.nix
     ./kitty/kitty.nix
     ./rofi/rofi.nix
     ./misc/misc.nix
@@ -40,10 +41,19 @@
 
 
     pyright
+    typescript-language-server
+    vscode-langservers-extracted
+    kotlin-language-server
+    jdt-language-server
+    clang-tools
+    omnisharp-roslyn     
+    lua-language-server
 
     
     vimix-cursors
+    geist-font
     nerd-fonts.geist-mono
+    nerd-fonts.symbols-only
 
     # HYPRLAND PLUGINS #
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
@@ -91,6 +101,4 @@
       user.email = "DJTrump@cumallover.me";
     };
   };
-
-  
 }

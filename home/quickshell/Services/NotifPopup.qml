@@ -32,7 +32,7 @@ PanelWindow {
         required property string appIcon
         required property int urgency
         required property var timestamp
-        required property var notifId   // renamed from "id" — avoid colliding with QML's own id keyword
+        required property var notifId
 
         notif: ({
           appName: appName,

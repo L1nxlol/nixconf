@@ -37,7 +37,7 @@ Loader {
 
       Text {
         font.family: Theme.font
-        font.pixelSize: 12
+        font.pixelSize: 8
         color: Theme.highlight
         text: {
           if (parent.fullyCharged) return "󱟢 ";

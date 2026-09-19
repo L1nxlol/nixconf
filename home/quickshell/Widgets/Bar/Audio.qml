@@ -39,7 +39,7 @@ Rectangle {
       verticalAlignment: Text.AlignVCenter
       // anchors.centerIn: parent
       font.family: Theme.font
-      font.pixelSize: 30
+      font.pixelSize: 20
       color: Theme.highlight
       text: {
         const vol = root.volume

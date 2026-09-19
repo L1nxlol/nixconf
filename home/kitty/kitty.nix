@@ -4,7 +4,7 @@
     enable = true;
 
     font = {
-      name = "GeistMono Nerd Font Mono";
+      name = "Geist Mono";
       size = 10;
     };
 
@@ -18,7 +18,9 @@
       cursor_trail = 1;
       cursor_trail_decay = "0.1  0.3";
 
-      symbol_map = "U+e000-U+f8ff Symbols Nerd Font Mono";
+      symbol_map = "U+e000-U+f8ff,U+f0000-U+f1af0 Symbols Nerd Font Mono";
+      font_features = "GeistMono-Regular +ss11";
+      disable_ligatures = "never";
     };
   };
 }
