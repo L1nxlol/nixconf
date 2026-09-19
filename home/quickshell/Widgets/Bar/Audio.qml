@@ -32,23 +32,22 @@ Rectangle {
     anchors.rightMargin: 10
     spacing: 6
 
-    Text {
-      Layout.preferredWidth: 16
-      Layout.fillHeight: true
-      horizontalAlignment: Text.AlignHCenter
-      verticalAlignment: Text.AlignVCenter
-      // anchors.centerIn: parent
-      font.family: Theme.font
-      font.pixelSize: 20
-      color: Theme.highlight
-      text: {
-        const vol = root.volume
-        if (vol <= 0) return ""
-        else if (vol < 0.3) return ""
-        else if (vol < 0.65) return ""
-        else return ""
-      }
+  Icon {
+    // anchors.topMargin: 20
+    yTrim: 0.06
+    Layout.preferredWidth: 16
+    Layout.fillHeight: true
+    family: Theme.font
+    size: 32
+    color: Theme.highlight
+    icon: {
+      const vol = root.volume
+      if (vol <= 0) return ""
+      else if (vol < 0.3) return ""
+      else if (vol < 0.65) return ""
+      else return ""
     }
+  }
 
 Rectangle {
   Layout.fillWidth: true

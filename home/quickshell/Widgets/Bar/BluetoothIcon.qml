@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Bluetooth
 import "../.."
+import "../../Services"
 
 Item {
   id: root
@@ -15,16 +16,14 @@ Item {
   readonly property string deviceName: connectedDevice?.name ?? ""
 
 
-  Text {
+  Icon {
     anchors.fill: parent
     anchors.topMargin: 4
     anchors.leftMargin: 10
-    font.family: Theme.font
-    font.pixelSize: 15
+    family: Theme.font
+    size: 20
     color: Theme.highlight
-    horizontalAlignment: Text.AlignHCenter
-    verticalAlignment: Text.AlignVCenter
-    text: {
+    icon: {
       if (!root.powered) return "󰂲"
       else if (!root.connected) return "󰂰"
       else return ""

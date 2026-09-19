@@ -58,17 +58,16 @@ Process {
     onTriggered: nmStatus.running = true
   }
 
-  Text {
-    font.family: Theme.font
-    font.pixelSize: 20
+  Icon {
+    yTrim: 0.03
+    family: Theme.font
+    size: 30
     color: Theme.highlight
     anchors.fill: parent 
-    horizontalAlignment: Text.AlignHCenter
-    verticalAlignment: Text.AlignVCenter
     anchors.topMargin: 4
     anchors.leftMargin: 10
 
-    text: {
+    icon: {
       if (!connected) return "󰤮"
       else if (States.wifiThingyState) return "󰤮"
       else if (ethernet) return "󱎔"
