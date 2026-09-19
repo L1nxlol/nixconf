@@ -12,3 +12,40 @@ vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeFocus<CR>")
 
 
 vim.keymap.set("n", "<leader>u", "<Cmd>UndotreeToggle<CR>")
+
+
+
+-- Telescope
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files()
+end)
+vim.keymap.set("n", "<leader>fg", function()
+  require("telescope.builtin").live_grep()
+end)
+vim.keymap.set("n", "<leader>fb", function()
+  require("telescope.builtin").buffers()
+end)
+vim.keymap.set("n", "<leader>fl", function()
+  require("telescope.builtin").help_tags()
+end)
+vim.keymap.set("n", "<leader>fh", function()
+  builtin.find_files({ hidden = true })
+end, {})
+
+
+-- Comment
+vim.keymap.set("n", "<leader>/", function()
+  require("Comment.api").toggle.linewise.current()
+end, { desc = "Comment line" })
+
+vim.keymap.set("x", "<leader>/", function()
+  local api = require("Comment.api")
+  local vmode = vim.fn.mode()
+  local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+  vim.api.nvim_feedkeys(esc, "nx", false)
+  if vmode == "V" then
+    api.toggle.linewise(vmode)
+  else
+    api.toggle.blockwise(vmode)
+  end
+end, { desc = "Comment selection" })
