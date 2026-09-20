@@ -19,6 +19,12 @@ hl.monitor({
     scale    = "auto",
 })
 
+hl.config({
+  xwayland = {
+    force_zero_scaling = true,
+  },
+})
+
 hl.workspace_rule({ workspace = "special:secondary", monitor = "HDMI-A-1" })
 
 
