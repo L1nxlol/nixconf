@@ -5,6 +5,7 @@
     zen-browser.homeModules.beta 
     ./extensions.nix
     ./search.nix
+    ./css.nix
   ];
 
   programs.zen-browser = {
@@ -19,12 +20,23 @@
 
         "zen.urlbar.behavior" = "float";
 
+        "browser.newtabpage.activity-stream.feeds.topsites" = false;
+        "browser.urlbar.suggest.history" = false;
+        "browser.urlbar.suggest.bookmark" = true;
+        "browser.urlbar.suggest.clipboard" = false;
+        "browser.urlbar.suggest.openpage" = false;
+        "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.suggest.recentsearches" = false;
+        "browser.urlbar.suggest.engines" = true;
+
+
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "zen.view.experimental-no-window-controls" = true; # doesnt work
 
         "network.trr.mode" = 3;
         "network.trr.uri" = "https://dns.quad9.net/dns-query";
 
-        "browser.uiCustomization.state" = ''{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["sponsorblocker_ajay_app-browser-action","jid1-mnnxcxisbpnsxq_jetpack-browser-action","ublock0_raymondhill_net-browser-action","_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action","_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action","idcac-pub_guus_ninja-browser-action","_830f38bd-efc5-45dc-a5a6-064d9a638806_-browser-action","_4b7825da-0dd1-44f9-9717-bee5b2408af6_-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","vertical-spacer","urlbar-container","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","ai-window-toggle"],"vertical-tabs":[],"PersonalToolbar":["import-button","personal-bookmarks"],"zen-sidebar-top-buttons":["zen-toggle-compact-mode"],"zen-sidebar-foot-buttons":["downloads-button","zen-workspaces-button","zen-create-new-button"]},"seen":["developer-button","screenshot-button","ublock0_raymondhill_net-browser-action","jid1-mnnxcxisbpnsxq_jetpack-browser-action","_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action","sponsorblocker_ajay_app-browser-action","_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action","idcac-pub_guus_ninja-browser-action","_830f38bd-efc5-45dc-a5a6-064d9a638806_-browser-action","ai-window-toggle","_4b7825da-0dd1-44f9-9717-bee5b2408af6_-browser-action"],"dirtyAreaCache":["nav-bar","vertical-tabs","zen-sidebar-foot-buttons","unified-extensions-area","toolbar-menubar","TabsToolbar","PersonalToolbar","zen-sidebar-top-buttons"],"currentVersion":26,"newElementCount":3}'';
+        "browser.uiCustomization.state" = ''{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action","sponsorblocker_ajay_app-browser-action","jid1-mnnxcxisbpnsxq_jetpack-browser-action","ublock0_raymondhill_net-browser-action","_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action","_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action","idcac-pub_guus_ninja-browser-action","_830f38bd-efc5-45dc-a5a6-064d9a638806_-browser-action","_4b7825da-0dd1-44f9-9717-bee5b2408af6_-browser-action","addon_darkreader_org-browser-action"],"nav-bar":["back-button","forward-button","stop-reload-button","vertical-spacer","urlbar-container","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","ai-window-toggle","smartwindow-group-tabs-button"],"vertical-tabs":[],"PersonalToolbar":["import-button","personal-bookmarks"],"zen-sidebar-top-buttons":["zen-toggle-compact-mode"],"zen-sidebar-foot-buttons":["downloads-button","zen-workspaces-button","zen-create-new-button"]},"seen":["developer-button","screenshot-button","ublock0_raymondhill_net-browser-action","jid1-mnnxcxisbpnsxq_jetpack-browser-action","_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action","sponsorblocker_ajay_app-browser-action","_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action","idcac-pub_guus_ninja-browser-action","_830f38bd-efc5-45dc-a5a6-064d9a638806_-browser-action","ai-window-toggle","_4b7825da-0dd1-44f9-9717-bee5b2408af6_-browser-action","_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action","addon_darkreader_org-browser-action","smartwindow-group-tabs-button"],"dirtyAreaCache":["nav-bar","vertical-tabs","zen-sidebar-foot-buttons","unified-extensions-area","toolbar-menubar","TabsToolbar","PersonalToolbar","zen-sidebar-top-buttons"],"currentVersion":26,"newElementCount":3}'';
       };
 
       mods = [ # to the future me, sorry
