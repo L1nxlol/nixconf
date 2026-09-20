@@ -16,9 +16,32 @@ vim.keymap.set("n", "<leader>u", "<Cmd>UndotreeToggle<CR>")
 
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", function()
-  require("telescope.builtin").find_files()
-end)
+
+local function find_up(levels, opts)
+  opts = opts or {}
+  return function()
+    local cwd = vim.fn.getcwd()
+    for _ = 1, levels do
+      cwd = cwd .. "/.."
+    end
+    opts.cwd = cwd
+    require("telescope.builtin").find_files(opts)
+  end
+end
+
+vim.keymap.set("n", "<leader>ff", find_up(0))
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>f" .. i .. "f", find_up(i))
+end
+
+vim.keymap.set("n", "<leader>fh", find_up(0, { hidden = true }))
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>f" .. i .. "h", find_up(i, { hidden = true }))
+end
+
+-- vim.keymap.set("n", "<leader>ff", function()
+--   require("telescope.builtin").find_files()
+-- end)
 vim.keymap.set("n", "<leader>fg", function()
   require("telescope.builtin").live_grep()
 end)
@@ -28,9 +51,9 @@ end)
 vim.keymap.set("n", "<leader>fl", function()
   require("telescope.builtin").help_tags()
 end)
-vim.keymap.set("n", "<leader>fh", function()
-  builtin.find_files({ hidden = true })
-end, {})
+-- vim.keymap.set("n", "<leader>fh", function()
+--   builtin.find_files({ hidden = true })
+-- end, {})
 
 
 -- Comment
