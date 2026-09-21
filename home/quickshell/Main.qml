@@ -109,8 +109,13 @@ PanelWindow {
       spacing: 10
 
       Audio {
+        anchors.leftMargin: States.locked ? 90 : 154
+      }
+      
+      Timer {
         anchors.leftMargin: States.locked ? 28 : 92
       }
+      // 28 : 92
 
       Loader {
         active: !States.locked
