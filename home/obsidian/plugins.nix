@@ -9,9 +9,9 @@
       obsidian-style-settings
     ];
 
-    themes = [
+/*     themes = [
       { pkg = pkgs.obsidianThemes.transparent; }
-    ];
+    ]; */
 
   corePlugins = [
   "backlink"
