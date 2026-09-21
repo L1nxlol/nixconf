@@ -3,6 +3,9 @@ vim.keymap.set({"n", "v"}, "c", '"_c', { desc = "Swap" })
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>")
 
+vim.keymap.set("i", "<C-BS>", "<C-w>")
+vim.keymap.set("i", "<C-Del>", "<C-o>dw")
+
 
 -- Tab management
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>")
