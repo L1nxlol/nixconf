@@ -29,15 +29,20 @@ Loader {
 
       Text {
         anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        anchors.leftMargin: 5
         font.family: Theme.font
-        font.pixelSize: 10
+        font.pixelSize: 12
         color: Theme.highlight
-        text: " " + parent.batPercentage + "%"
+        text: parent.batPercentage + "%"
       }
 
       Text {
+        anchors.left: parent.left
+        anchors.leftMargin: 30
         font.family: Theme.font
-        font.pixelSize: 8
+        anchors.verticalCenter: parent.verticalCenter
+        font.pixelSize: 12
         color: Theme.highlight
         text: {
           if (parent.fullyCharged) return "󱟢 ";
