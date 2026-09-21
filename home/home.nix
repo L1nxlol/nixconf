@@ -11,6 +11,7 @@
     ./obsidian/obsidian.nix
     ./zen/zen.nix
     ./walker/walker.nix
+    ./gtk/gtk.nix
   ]; 
 
   home.username = "user";
@@ -58,27 +59,26 @@
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
       mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
     })    
-    # (pkgs.callPackage ../cPkgs/dynamic-cursors.nix {
-    #   mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
-    # })
   ];
 
 
-  gtk.enable = true;
   qt.enable = true;
   qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
-  gtk.theme = {
-    name = "Adwaita-dark";
-    package = pkgs.gnome-themes-extra;
-  };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
-    };
-  };
+  # gtk.theme = {
+  #   name = "Adwaita-dark";
+  #   package = pkgs.gnome-themes-extra;
+  # };
+
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #     # gtk-theme = "Adwaita-dark";
+  #     gtk-theme = "Fluent-round-Dark";
+  #   };
+  # };
+
 
 
   home.pointerCursor = {
