@@ -41,6 +41,7 @@
 
 
     pyright
+    nixd
     typescript-language-server
     vscode-langservers-extracted
     kotlin-language-server
@@ -65,20 +66,6 @@
   qt.enable = true;
   qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
-
-  # gtk.theme = {
-  #   name = "Adwaita-dark";
-  #   package = pkgs.gnome-themes-extra;
-  # };
-
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #     # gtk-theme = "Adwaita-dark";
-  #     gtk-theme = "Fluent-round-Dark";
-  #   };
-  # };
-
 
 
   home.pointerCursor = {

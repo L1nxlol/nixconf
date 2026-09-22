@@ -47,6 +47,7 @@ return {
         ts_ls = {},
         html = {},
         cssls = {},
+        nixd = {},
       }
 
       for name, cfg in pairs(servers) do
