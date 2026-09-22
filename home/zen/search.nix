@@ -31,6 +31,14 @@
         definedAliases = ["@np"];
       };
 
+      youtube = {
+         name = "Youtube";
+         urls = [{
+           template = "https://www.youtube.com/results?search_query={searchTerms}";
+         }];
+         definedAliases = ["@yt"];
+       };
+
       github = {
         name = "GitHub Search";
         urls = [{
