@@ -7,6 +7,7 @@
     tree-sitter
 
 
+    thunderbird
     # RICE #
     quickshell
     awww
