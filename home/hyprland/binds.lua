@@ -12,23 +12,6 @@ local dirKeys = {
   ["right"] = "right",
 }
 
-
--- for i = 1, 10 do
---   if i == 10 then key = 0 else key = i end
---   hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true })
---   hl.bind("SUPER + ".. key, hl.dsp.focus({workspace = i}))
---   hl.bind("SUPER + SHIFT + ".. key, hl.dsp.window.move({workspace = i}))
---   hl.bind("SUPER + CTRL + ".. key, hl.dsp.window.move({workspace = i, follow = false}))
--- end
---
--- for i = 11, 20 do
---   if i == 20 then key = 0 else key = i - 10 end
---   hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-2", default = true })
---   hl.bind("SUPER + ALT + ".. key, hl.dsp.focus({workspace = i}))
---   hl.bind("SUPER + ALT + SHIFT + ".. key, hl.dsp.window.move({workspace = i}))
---   hl.bind("SUPER + ALT + CTRL + ".. key, hl.dsp.window.move({workspace = i, follow = false}))
--- end
-
 local allMonitors = hl.get_monitors()
 table.sort(allMonitors, function(a, b) return a.x < b.x end)
 
@@ -101,6 +84,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float())
 
 hl.bind(mainMod .. " + Tab",         hl.dsp.workspace.toggle_special("tab"))
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.window.move({ workspace = "special:tab" }))
+hl.bind(mainMod .. " + CTRL + Tab", hl.dsp.window.move({ workspace = "special:tab", follow = false }))
 
 
 -- PLAYERCTL
