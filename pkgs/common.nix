@@ -53,6 +53,7 @@
     lua
     adoptopenjdk-icedtea-web
     python313
+    kotlin
 
 
     # DE #
