@@ -50,7 +50,10 @@
     omnisharp-roslyn     
     lua-language-server
 
-    
+
+    (pkgs.python3.withPackages (ps: [ ps.pygame-ce ]))
+
+
     vimix-cursors
     geist-font
     nerd-fonts.geist-mono
