@@ -34,6 +34,18 @@ return {
           local root = root_pattern(".git", "pyproject.toml", "setup.py", "setup.cfg")(fname)
           on_dir(root or vim.fs.dirname(fname))
         end,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "basic",
+              diagnosticSeverityOverrides = {
+                reportUnusedVariable = "warning",
+                reportUnusedImport = "warning",
+                reportMissingTypeStubs = "information",
+              },
+            },
+          },
+        },
       },
         lua_ls = {
           settings = {
@@ -58,7 +70,7 @@ return {
         vim.lsp.enable(name)
       end
 
-      -- qmlls: not mason-managed, comes from Qt itself
+      -- not mason-managed. comes from Qt
       vim.lsp.config("qmlls", {
         cmd = { "qmlls" },
         filetypes = { "qml" },
