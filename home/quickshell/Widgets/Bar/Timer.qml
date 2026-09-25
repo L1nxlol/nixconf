@@ -26,10 +26,9 @@ Rectangle {
   Icon{
     // anchors.left: parent.left
     family: Theme.font
-    size: 24
+    size: 20
     color: Theme.highlight
-    anchors.topMargin: 4
-    anchors.leftMargin: 10
+    yTrim: 0.09
 
     icon: ""
   }
@@ -42,7 +41,7 @@ Rectangle {
       const end = 1809302400
       const now = Date.now() / 1000
       const pct = Math.min(100, Math.max(0, (1 - (end - now) / total) * 100))
-      countDown.text = "   " + pct.toFixed(1) + "%"
+      countDown.text = "  " + pct.toFixed(1) + "%"
     }   
     color: Theme.highlight
     font.family: Theme.font
