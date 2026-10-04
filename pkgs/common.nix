@@ -31,6 +31,7 @@
     upower
     helvum
     brightnessctl
+    tree
 
 
     # GUI BASIC TOOLS # 
