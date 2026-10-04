@@ -50,6 +50,9 @@
     omnisharp-roslyn     
     lua-language-server
 
+    jdk21
+    gradle
+
 
     (pkgs.python3.withPackages (ps: [ ps.pygame-ce ]))
 
