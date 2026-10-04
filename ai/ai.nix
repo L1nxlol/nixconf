@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./llama.nix
-    ./hermes.nix
-    ./sandbox.nix
+    # ./llama.nix
+    # ./hermes.nix
+    # ./sandbox.nix
   ];
 
   environment.systemPackages = with pkgs; [

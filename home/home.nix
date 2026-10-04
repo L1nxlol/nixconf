@@ -52,6 +52,8 @@
 
 
     (pkgs.python3.withPackages (ps: [ ps.pygame-ce ]))
+    gradle
+    jdk21
 
 
     vimix-cursors
@@ -69,7 +71,6 @@
   qt.enable = true;
   qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
-
 
   home.pointerCursor = {
     enable = true;
