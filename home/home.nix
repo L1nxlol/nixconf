@@ -94,4 +94,20 @@
       user.email = "DJTrump@cumallover.me";
     };
   };
+
+  systemd.user.services.ceres = {
+    Unit.Description = "Ceres agent daemon";
+
+    Service = {
+      ExecStart = "/home/user/Projects/ceres/build/install/ceres/bin/ceres daemon";
+      WorkingDirectory = "/home/user/Projects/ceres";
+      Environment = [ "JAVA_HOME=${pkgs.jdk}" ];
+      Restart = "on-failure";
+      RestartSec = "3s";
+      SuccessExitStatus = "143";
+      TimeoutStopSec = "10s";
+    };
+
+    Install.WantedBy = [ "default.target" ];
+  };
 }
