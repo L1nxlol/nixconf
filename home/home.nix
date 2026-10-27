@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 
+let
+  kotlin-lsp = pkgs.callPackage ../cPkgs/kotlin-lsp.nix { };
+in
 {
   imports = [
     ./hyprland/hyprland.nix
@@ -19,6 +22,8 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
+    kotlin-lsp
+
     btop
     fd
     qt6.qtdeclarative

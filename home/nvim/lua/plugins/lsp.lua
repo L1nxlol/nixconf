@@ -52,7 +52,7 @@ return {
             Lua = { diagnostics = { globals = { "vim" } } },
           },
         },
-        kotlin_language_server = {},
+        -- kotlin_language_server = {},
         jdtls = {},
         clangd = {},
         csharp_ls = {},
@@ -69,6 +69,25 @@ return {
         }, cfg))
         vim.lsp.enable(name)
       end
+
+      -- remove: kotlin_language_server = {},
+
+      -- after the servers loop, next to your qmlls block:
+      vim.lsp.config("kotlin_lsp", {
+        cmd = { "kotlin-lsp", "--stdio" },
+        filetypes = { "kotlin" },
+        root_dir = function(bufnr, on_dir)
+          local fname = vim.api.nvim_buf_get_name(bufnr)
+          on_dir(root_pattern(
+            "settings.gradle.kts", "settings.gradle",
+            "build.gradle.kts", "build.gradle",
+            "pom.xml", ".git"
+          )(fname))
+        end,
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      vim.lsp.enable("kotlin_lsp")
 
       -- not mason-managed. comes from Qt
       vim.lsp.config("qmlls", {
