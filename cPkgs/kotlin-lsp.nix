@@ -45,8 +45,8 @@ stdenvNoCC.mkDerivation rec {
 
   # exact "Standalone Kotlin LSP Archive → Linux-x64" link from the release page
   src = fetchzip {
-    url = "https://github.com/Kotlin/kotlin-lsp/releases/download/v${version}/kotlin-${version}.tar.gz";
-    hash = lib.fakeHash; # real sha256 from first failed build
+    url = "https://download.jetbrains.com/language-server/kotlin-server/${version}/kotlin-server-${version}.tar.gz";
+    hash = "sha256-Ld04XYQh62ahCzpAzZzwhFtI0apmhZIhQMVRm6ak+eQ=";
   };
 
   nativeBuildInputs = [ makeWrapper autoPatchelfHook ];
