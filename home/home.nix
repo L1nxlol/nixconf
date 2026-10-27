@@ -56,6 +56,7 @@
 
     (pkgs.python3.withPackages (ps: [ ps.pygame-ce ]))
     gradle
+    android-studio
     jdk21
 
 
@@ -68,8 +69,9 @@
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
       mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
     })    
-  ];
 
+    android-tools
+  ];
 
   qt.enable = true;
   qt.platformTheme.name = "gtk";
