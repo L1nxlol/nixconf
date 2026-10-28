@@ -50,6 +50,7 @@ home.file.".p10k.zsh".source = ./p10k.zsh;
       fastfetch = "fastfetch -c '/home/user/Nix/home/misc/fastfetch.jsonc'";
 
       hermes = "hermes-sandboxed";
+      comfy= "cd ~/Desktop/Apps/ComfyUI && HSA_OVERRIDE_GFX_VERSION=11.0.0 HIP_VISIBLE_DEVICES=0 .venv/bin/python main.py";
 
       clear = "printf '\\033[3J\\033[H\\033[2J'";
     };

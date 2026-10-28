@@ -12,6 +12,13 @@
       ./locales.nix
     ];
 
+  hardware.graphics.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libGL
+  ];
+
+
   programs.dconf.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;

@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 
+let
+  kotlin-lsp = pkgs.callPackage ../cPkgs/kotlin-lsp.nix { };
+in
 {
   imports = [
     ./hyprland/hyprland.nix
@@ -19,6 +22,8 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
+    kotlin-lsp
+
     btop
     fd
     qt6.qtdeclarative
@@ -56,6 +61,7 @@
 
     (pkgs.python3.withPackages (ps: [ ps.pygame-ce ]))
     gradle
+    android-studio
     jdk21
 
 
@@ -68,8 +74,9 @@
     (pkgs.callPackage ../cPkgs/hyprglass.nix {
       mkHyprlandPlugin = pkgs.hyprlandPlugins.mkHyprlandPlugin;
     })    
-  ];
 
+    android-tools
+  ];
 
   qt.enable = true;
   qt.platformTheme.name = "gtk";
