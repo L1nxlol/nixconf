@@ -75,6 +75,8 @@
   qt.platformTheme.name = "gtk";
   qt.style.name = "adwaita-dark";
 
+  fonts.fontconfig.enable = true;
+
   home.pointerCursor = {
     enable = true;
     package = pkgs.vimix-cursors;
